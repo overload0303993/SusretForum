@@ -26,6 +26,9 @@
  */
 class Korisnik extends CActiveRecord
 {
+
+	public $drugaLozinka;
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -43,17 +46,26 @@ class Korisnik extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('userName, password, datumReg, brojPostova, rang', 'required'),
+			array('drugaLozinka', 'required'),
 			array('starost, brojPostova, rang', 'numerical', 'integerOnly'=>true),
 			array('userName', 'length', 'max'=>30),
-			array('password', 'length', 'max'=>32),
+			array('password', 'length', 'max'=>32, 'on'=>'create'),
+			array('drugaLozinka', 'length', 'max'=>32, 'on'=>'create'),
+			array('drugaLozinka', 'compare', 'compareAttribute'=>'password', 'message'=>"Lozinke nisu jednake!"),
 			array('avatar', 'length', 'max'=>255, 'on'=>'insert,update'),
-			array('avatar', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true, 'on'=>'update'),
+			array('avatar', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true),
 			array('spol', 'length', 'max'=>1),
 			array('potpis', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, userName, password, avatar, spol, starost, datumReg, brojPostova, rang, potpis', 'safe', 'on'=>'search'),
 		);
+	}
+	
+	protected function afterValidate() {
+		$this->drugaLozinka = '';
+		$this->password = '';
+		parent::afterValidate();
 	}
 
 	/**

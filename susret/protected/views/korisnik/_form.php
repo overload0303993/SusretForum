@@ -4,6 +4,12 @@
 /* @var $form CActiveForm */
 ?>
 
+<?php if(!empty($this->greskaFatal)) { 
+	
+  ?> <h1><font color="red">Greška</font></h1></br></br>
+	<h3><?php echo $this->greskaFatal; ?></h3> <?php
+} else { ?>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -22,9 +28,9 @@
 		<?php echo $form->labelEx($model,'userName'); ?>
 		<?php echo $form->textField($model,'userName',array('size'=>30,'maxlength'=>30)); ?>
 		<?php 
-			$error = $form->error($model,'userName');
-			if(!empty($error)) {
-				echo 'Korisničko ime postoji!';
+			if(!empty($this->greskaUser)) {
+				?> </br> <font color="red"><?php
+				echo $this->greskaUser; ?></font><?php
 			}
 		?>
 	</div>
@@ -34,13 +40,20 @@
 		<?php echo $form->passwordField($model,'password',array('size'=>32,'maxlength'=>32)); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model, 'drugaLozinka'); ?>
+		<?php echo $form->passwordField($model,'drugaLozinka',array('size'=>32,'maxlength'=>32)); ?>
+		<?php echo $form->error($model,'drugaLozinka'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'avatar'); ?>
 		<?php echo CHtml::activeFileField($model,'avatar'); ?>
 		<?php $error = $form->error($model,'avatar');
 			if(!empty($error)) {
-				echo 'Podržane ekstentzije su: .jpg, .png, .gif';
+				?><font color="red"><?php echo 'Podržane ekstentzije su: .jpg, .png, .gif';
+				?></font><?php
 			}?>
 	</div>
 
@@ -70,3 +83,4 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<?php } ?>

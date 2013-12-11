@@ -7,7 +7,8 @@ class KorisnikController extends Controller {
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout = '//layouts/column1';
-	public $greska = "";
+	public $greskaUser = "";
+	public $greskaFatal = "";
 
 	/**
 	 * @return array action filters
@@ -59,34 +60,48 @@ class KorisnikController extends Controller {
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate() {
-		$model = new Korisnik;
+		$model = new Korisnik();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Korisnik'])) {
 			$model->attributes = $_POST['Korisnik'];
-			$model->password = md5(md5($model->password));
-			$model->brojPostova = 0;
-			$model->rang = 0;
-			$model->datumReg = new CDbExpression("NOW()");
-			$uploadedFile = CUploadedFile::getInstance($model, 'avatar');
-			//php way za ekstrakciju ekstenzije
-			$path_info = pathinfo($uploadedFile);
-			$ext = $path_info['extension'];
-			$date = new DateTime();
-			$filename = strval($date->getTimestamp()) . $model->userName;
-			$model->avatar = $filename . '.' . $ext;
+			$user = Korisnik::model()->find('userName=:userName', array(':userName' => $model->userName));
+			if (!empty($user)) {
+				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
+				$model->password = '';
+				header("Location : /susret/korisnik/create");
+			} else {
+				$model->password = md5(md5($model->password));
+				$model->brojPostova = 0;
+				$model->rang = 0;
+				$model->datumReg = new CDbExpression("NOW()");
+				$uploadedFile = CUploadedFile::getInstance($model, 'avatar');
+				if (empty($uploadedFile)) {
+					$model->avatar = '';
+				} else {
+					//php way za ekstrakciju ekstenzije
+					$path_info = pathinfo($uploadedFile);
+					$ext = $path_info['extension'];
+					$date = new DateTime();
+					$filename = strval($date->getTimestamp()) . $model->userName;
+					$model->avatar = $filename . '.' . $ext;
+				}
 //			if($model->save())
 //				$this->redirect(array('view','id'=>$model->id));
-			try {
-				if ($model->save()) {
-					$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/" . $filename . '.' . $ext);
-					$this->redirect(array('view', 'id' => $model->id));
+				try {
+					if ($model->save()) {
+						if(!empty($uploadedFile)) {
+							$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/" . $filename . '.' . $ext);
+						}
+						$this->redirect(array('/'));
+					}
+				} catch (CDbException $e) {
+					$model->password = '';
+					$this->greskaFatal = "Ozbiljna pogreška. Molimo javite se autorima jer su napravili glupost. Hvala!";
+					header("Location : /susret/korisnik/create");
 				}
-			} catch (CDbException $e) {
-				header("Location : /susret/korisnik/create");
-				$this->greska = "Krivo ime";
 			}
 		}
 
@@ -116,13 +131,12 @@ class KorisnikController extends Controller {
 				if ($model->save()) {
 					if (!empty($uploadedFile)) {  // check if uploaded file is set or not
 						//spremi novu sliku iz "uploadedFile" pod starim imenom da ne radim ponovo svu logiku ponovo
-						$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/".$model->avatar);
+						$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/" . $model->avatar);
 					}
 					$this->redirect(array('view', 'id' => $model->id));
 				}
 			} catch (CDbException $e) {
 				header("Location : /susret/korisnik/create");
-				$this->greska = "Krivo ime";
 			}
 		}
 
