@@ -9,6 +9,8 @@ class KorisnikController extends Controller {
 	public $layout = '//layouts/column1';
 	public $greskaUser = "";
 	public $greskaFatal = "";
+	public $greskaRola = "";
+	public $passGreska = "";
 
 	/**
 	 * @return array action filters
@@ -70,9 +72,18 @@ class KorisnikController extends Controller {
 			$user = Korisnik::model()->find('userName=:userName', array(':userName' => $model->userName));
 			if (!empty($user)) {
 				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
-				$model->password = '';
+				$model->password = $model->drugaLozinka = '';
+				header("Location : /susret/korisnik/create");
+			} elseif(empty($model->rola)) {
+				$this->greskaRola = "Rola je obavezna!";
+				$model->password = $model->drugaLozinka = '';
+				header("Location : /susret/korisnik/create");
+			} elseif(empty($model->drugaLozinka) || empty ($model->password)) {
+				$this->passGreska = "Obje lozinke su obavezne.";
+				$model->password = $model->drugaLozinka = '';
 				header("Location : /susret/korisnik/create");
 			} else {
+				$model->drugaLozinka = md5(md5($model->drugaLozinka));
 				$model->password = md5(md5($model->password));
 				$model->brojPostova = 0;
 				$model->rang = 0;
@@ -98,13 +109,13 @@ class KorisnikController extends Controller {
 						$this->redirect(array('/'));
 					}
 				} catch (CDbException $e) {
-					$model->password = '';
+					$model->password = $model->drugaLozinka = '';
 					$this->greskaFatal = "Ozbiljna pogreška. Molimo javite se autorima jer su napravili glupost. Hvala!";
 					header("Location : /susret/korisnik/create");
 				}
 			}
 		}
-
+		$model->password = $model->drugaLozinka = '';
 		$this->render('create', array(
 			'model' => $model,
 		));
@@ -129,7 +140,7 @@ class KorisnikController extends Controller {
 
 			try {
 				if ($model->save()) {
-					if (!empty($uploadedFile)) {  // check if uploaded file is set or not
+					if (!empty($uploadedFile)) { 
 						//spremi novu sliku iz "uploadedFile" pod starim imenom da ne radim ponovo svu logiku ponovo
 						$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/" . $model->avatar);
 					}

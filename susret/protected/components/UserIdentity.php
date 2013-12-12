@@ -25,7 +25,7 @@ class UserIdentity extends CUserIdentity {
 		else {
 			$this->id = $record->id;
 			//$this->setState('title', $record->userName);
-			$rola = Role::model()->findByPk($record->rolaId);
+			$rola = Role::model()->findByPk($record->rola);
 			$this->setState('roles', $rola->ime);
 			$this->errorCode = self::ERROR_NONE;
 		}

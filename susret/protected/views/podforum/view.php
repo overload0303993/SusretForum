@@ -25,14 +25,19 @@ $this->menu = array(
 
 <?php
 if (empty($teme)) {
-	?>  </br></br> <h2>Prazan podforum</h2> <?php } else {
+	?>  </br></br> <h2>Na ovom podforumu nema otvorenih tema.</h2> <?php
+	
+} else {
 	?>
+	<?php
+		foreach ($teme as $tema) { ?>
 	<div class="view">
 		<b><font size="4">
-			<?php echo $teme->naziv; ?>
+			<a href='<?php echo "/susret/tema/view/" . $tema->id; ?>'><?php echo $tema->naziv; ?></a>
 			</font></b>
 	</div> 
-<?php } ?>
+	
+<?php } } ?>
 
 
 

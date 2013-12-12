@@ -17,7 +17,10 @@
 
 	<p class="note">Polja označena <span class="required">*</span> su obvezna.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model); 
+		$post = new Post();
+		
+	?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'naziv'); ?>
@@ -39,14 +42,15 @@
 		<?php echo Yii::app()->user->id; ?>
 	</div>-->
 
-<!--	<div class="row">
-		<?php echo $form->labelEx($model,'brojPregleda'); ?>
-		<?php echo $form->textField($model,'brojPregleda'); ?>
-		<?php echo $form->error($model,'brojPregleda'); ?>
-	</div>-->
+	<div class="row">
+		<?php echo $form->labelEx($post,'tekst'); ?>
+		<?php echo $form->textArea($post, 'tekst', array('maxlength' => 300, 'rows' => 6, 'cols' => 50)); ?>
+		<?php echo $form->error($post,'tekst'); ?>
+	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');?>
+    
 	</div>
 
 <?php $this->endWidget(); ?>

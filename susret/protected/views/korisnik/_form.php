@@ -44,7 +44,10 @@
 	<div class="row">
 		<?php echo $form->labelEx($model, 'drugaLozinka'); ?>
 		<?php echo $form->passwordField($model,'drugaLozinka',array('size'=>32,'maxlength'=>32)); ?>
-		<?php echo $form->error($model,'drugaLozinka'); ?>
+		<?php if(!empty($this->passGreska)) {
+				?> </br> <font color="red"><?php
+				echo $this->passGreska; ?></font><?php
+			} ?>
 	</div>
 
 	<div class="row">
@@ -74,6 +77,18 @@
 		<?php echo $form->labelEx($model,'potpis'); ?>
 		<?php echo $form->textArea($model,'potpis',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'potpis'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model, 'rola'); ?>
+		<?php echo $form->dropDownList($model, 'rola', array(1 => 'Običan korisnik', 
+			2 => 'Moderator', 3 => 'Istrazivac'), array('prompt'=>'Odaberi rolu:'))?>
+		<?php 
+			if(!empty($this->greskaRola)) {
+				?> </br> <font color="red"><?php
+				echo $this->greskaRola; ?></font><?php
+			}
+		?>
 	</div>
 
 	<div class="row buttons">

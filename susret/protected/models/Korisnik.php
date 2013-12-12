@@ -45,29 +45,22 @@ class Korisnik extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('userName, password, datumReg, brojPostova, rang', 'required'),
+			array('userName, password, datumReg, brojPostova, rang, rola', 'required'),
 			array('drugaLozinka', 'required'),
 			array('starost, brojPostova, rang', 'numerical', 'integerOnly'=>true),
 			array('userName', 'length', 'max'=>30),
-			array('password', 'length', 'max'=>32, 'on'=>'create'),
-			array('drugaLozinka', 'length', 'max'=>32, 'on'=>'create'),
-			array('drugaLozinka', 'compare', 'compareAttribute'=>'password', 'message'=>"Lozinke nisu jednake!"),
+			array('password', 'length', 'max'=>32),
+			array('drugaLozinka', 'length', 'max'=>32),
+			array('password', 'compare', 'compareAttribute'=>'drugaLozinka', 'message'=>"Lozinke nisu jednake!"),
 			array('avatar', 'length', 'max'=>255, 'on'=>'insert,update'),
 			array('avatar', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true),
 			array('spol', 'length', 'max'=>1),
 			array('potpis', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, userName, password, avatar, spol, starost, datumReg, brojPostova, rang, potpis', 'safe', 'on'=>'search'),
+			array('id, userName, password, drugaLozinka, avatar, spol, starost, datumReg, brojPostova, rang, potpis, rola', 'safe'),
 		);
 	}
-	
-	protected function afterValidate() {
-		$this->drugaLozinka = '';
-		$this->password = '';
-		parent::afterValidate();
-	}
-
 	/**
 	 * @return array relational rules.
 	 */
@@ -95,6 +88,7 @@ class Korisnik extends CActiveRecord
 			'id' => 'ID',
 			'userName' => 'User Name',
 			'password' => 'Password',
+			'drugaLozinka' => "Druga lozinka",
 			'avatar' => 'Avatar',
 			'spol' => 'Spol',
 			'starost' => 'Starost',

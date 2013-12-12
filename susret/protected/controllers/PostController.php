@@ -1,12 +1,12 @@
 <?php
 
-class TemaController extends Controller
+class PostController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column1';
+	public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -62,28 +62,16 @@ class TemaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Tema;
-		$post = new Post;
+		$model=new Post;
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		
-		if(isset($_POST['Tema']))
+
+		if(isset($_POST['Post']))
 		{
-			$model->attributes=$_POST['Tema'];
-			$post->attributes = $_POST['Post'];
-			$post->datumPost = new CDbExpression('NOW()');
-			$post->idAutor = Yii::app()->user->id;
-			$user = Korisnik::model()->findByPk(Yii::app()->user->id);
-			Korisnik::model()->updateByPk(Yii::app()->user->id, array('brojPostova' => $user->brojPostova + 1));
-			$model->brojPregleda = 0;
-			$model->idAutor = Yii::app()->user->id;
-			$model->idPodforum = $_GET['pdfId'];
-			if($model->save()) {
-				$post->idTema = $model->id;
-				if($post->save()) {
-					$this->redirect(array('view','id'=>$model->id));
-				}
-			}
+			$model->attributes=$_POST['Post'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -103,9 +91,9 @@ class TemaController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Tema']))
+		if(isset($_POST['Post']))
 		{
-			$model->attributes=$_POST['Tema'];
+			$model->attributes=$_POST['Post'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -134,7 +122,7 @@ class TemaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Tema');
+		$dataProvider=new CActiveDataProvider('Post');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -145,10 +133,10 @@ class TemaController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Tema('search');
+		$model=new Post('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Tema']))
-			$model->attributes=$_GET['Tema'];
+		if(isset($_GET['Post']))
+			$model->attributes=$_GET['Post'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -159,12 +147,12 @@ class TemaController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Tema the loaded model
+	 * @return Post the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Tema::model()->findByPk($id);
+		$model=Post::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -172,11 +160,11 @@ class TemaController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Tema $model the model to be validated
+	 * @param Post $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='tema-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='post-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
