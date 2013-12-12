@@ -34,7 +34,7 @@ class PodforumController extends Controller
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'roles'=>array('moderator, istrazivac'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
@@ -123,7 +123,9 @@ class PodforumController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Podforum');
+		$dataProvider=new CActiveDataProvider('Podforum',
+				array('pagination'=>array('pageSize'=>20,),
+				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

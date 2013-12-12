@@ -3880,3 +3880,19 @@ in D:\xampp\htdocs\susret\index.php (13)
 2013/12/11 22:21:04 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
 in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (69)
 in D:\xampp\htdocs\susret\index.php (13)
+2013/12/12 03:16:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('create')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('podforum/create')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/podforum/create
+---
