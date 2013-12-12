@@ -4,34 +4,27 @@
 /* @var $data Podforum */
 ?>
 
-<div class="view">
+<?php $name = CHtml::encode($data->naziv); ?>
 
-<!--	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
-	<br />-->
-
-<!--	<b><?php echo CHtml::encode($data->getAttributeLabel('naziv')); ?>:</b>-->
+<?php
+if ($name === 'Rasprava') {
+	if (Yii::app()->user->checkAccess('istrazivac')) {
+		?>
+		<div class="view">
+			<b><font size="4">
+				<img src="<?php echo CHtml::encode($data->slika); ?>" alt="image">
+				<?php $podforum = Podforum::model()->find('naziv=:naziv', array(':naziv' => $data->naziv));?>
+				<a href='<?php echo "/susret/podforum/view/" . $podforum->id; ?>'><?php echo $data->naziv;?></a>
+				</font></b>
+		</div>
+	<?php }
 	
-	
-	<?php $name = CHtml::encode($data->naziv); 
-	?>
-	<b><font size="4">
-		<?php 
-			if($name === 'Rasprava') {
-				if(Yii::app()->user->checkAccess('istrazivac')) {
-					?><img src="<?php echo CHtml::encode($data->slika); ?>" alt="image"><?php
-					echo $name;
-				}
-			} else {
-				?><img src="<?php echo CHtml::encode($data->slika); ?>" alt="image"><?php
-					echo $name;
-			}
-		?></font></b>
+	} else { ?>
+		<div class="view">
+			<b><font size="4">
+				<img src="<?php echo CHtml::encode($data->slika); ?>" alt="image">
+				<?php $podforum = Podforum::model()->find('naziv=:naziv', array(':naziv' => $data->naziv));?>
+				<a href="<?php echo "/susret/podforum/view/" . $podforum->id; ?>"><?php echo $data->naziv;?></a>
+		<?php }?></font></b>
+		</div>
 	<br />
-
-<!--	<b><?php echo CHtml::encode($data->getAttributeLabel('slika')); ?>:</b>
-	<?php echo CHtml::encode($data->slika); ?>
-	<br />-->
-
-
-</div>
