@@ -73,15 +73,15 @@ class KorisnikController extends Controller {
 			if (!empty($user)) {
 				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
 				$model->password = $model->drugaLozinka = '';
-				header("Location : /susret/korisnik/create");
+				header("Location : " . Yii::app()->request->requestUri);
 			} elseif(empty($model->rola)) {
 				$this->greskaRola = "Rola je obavezna!";
 				$model->password = $model->drugaLozinka = '';
-				header("Location : /susret/korisnik/create");
+				header("Location : " . Yii::app()->request->requestUri);
 			} elseif(empty($model->drugaLozinka) || empty ($model->password)) {
 				$this->passGreska = "Obje lozinke su obavezne.";
 				$model->password = $model->drugaLozinka = '';
-				header("Location : /susret/korisnik/create");
+				header("Location : " . Yii::app()->request->requestUri);
 			} else {
 				$model->drugaLozinka = md5(md5($model->drugaLozinka));
 				$model->password = md5(md5($model->password));
@@ -111,7 +111,7 @@ class KorisnikController extends Controller {
 				} catch (CDbException $e) {
 					$model->password = $model->drugaLozinka = '';
 					$this->greskaFatal = "Ozbiljna pogreška. Molimo javite se autorima jer su napravili glupost. Hvala!";
-					header("Location : /susret/korisnik/create");
+					header("Location : " . Yii::app()->request->requestUri);
 				}
 			}
 		}

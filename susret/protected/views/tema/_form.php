@@ -17,15 +17,19 @@
 
 	<p class="note">Polja označena <span class="required">*</span> su obvezna.</p>
 
-	<?php echo $form->errorSummary($model); 
+	<?php 
 		$post = new Post();
+		if(isset($_POST["Post"])) {
+			$post->attributes = $_POST["Post"];
+		}
 		
 	?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'naziv'); ?>
 		<?php echo $form->textField($model,'naziv',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'naziv'); ?>
+		</br> <font color="red"><?php
+			echo $this->greskaTema; ?></font>
 	</div>
 
 <!--	<div class="row">
@@ -45,7 +49,8 @@
 	<div class="row">
 		<?php echo $form->labelEx($post,'tekst'); ?>
 		<?php echo $form->textArea($post, 'tekst', array('maxlength' => 300, 'rows' => 6, 'cols' => 50)); ?>
-		<?php echo $form->error($post,'tekst'); ?>
+		</br> <font color="red">
+			<?php echo $this->greskaPost; ?></font>
 	</div>
 
 	<div class="row buttons">

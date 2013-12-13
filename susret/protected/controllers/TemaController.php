@@ -7,6 +7,9 @@ class TemaController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column1';
+	
+	public $greskaTema = "";
+	public $greskaPost = "";
 
 	/**
 	 * @return array action filters
@@ -71,17 +74,25 @@ class TemaController extends Controller
 		{
 			$model->attributes=$_POST['Tema'];
 			$post->attributes = $_POST['Post'];
-			$post->datumPost = new CDbExpression('NOW()');
-			$post->idAutor = Yii::app()->user->id;
-			$user = Korisnik::model()->findByPk(Yii::app()->user->id);
-			Korisnik::model()->updateByPk(Yii::app()->user->id, array('brojPostova' => $user->brojPostova + 1));
-			$model->brojPregleda = 0;
-			$model->idAutor = Yii::app()->user->id;
-			$model->idPodforum = $_GET['pdfId'];
-			if($model->save()) {
-				$post->idTema = $model->id;
-				if($post->save()) {
-					$this->redirect(array('view','id'=>$model->id));
+			if(empty($model->naziv)) {
+				$this->greskaTema = "Morate unijeti naziv teme.";
+				header("Location : " . Yii::app()->request->requestUri);
+			} elseif(empty($post->tekst)) {
+				$this->greskaPost = "Morate unijeti tekst posta.";
+				header("Location : " . Yii::app()->request->requestUri);
+			} else {
+				$post->datumPost = new CDbExpression('NOW()');
+				$post->idAutor = Yii::app()->user->id;
+				$user = Korisnik::model()->findByPk(Yii::app()->user->id);
+				Korisnik::model()->updateByPk(Yii::app()->user->id, array('brojPostova' => $user->brojPostova + 1));
+				$model->brojPregleda = 0;
+				$model->idAutor = Yii::app()->user->id;
+				$model->idPodforum = $_GET['pdfId'];
+				if($model->save()) {
+					$post->idTema = $model->id;
+					if($post->save()) {
+						$this->redirect(array('view','id'=>$model->id));
+					}
 				}
 			}
 		}

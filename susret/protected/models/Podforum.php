@@ -9,7 +9,7 @@
  * @property string $slika
  *
  * The followings are the available model relations:
- * @property Moderator[] $moderators
+ * @property Korisnik[] $korisniks
  * @property Tema[] $temas
  */
 class Podforum extends CActiveRecord
@@ -46,7 +46,7 @@ class Podforum extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'moderators' => array(self::HAS_MANY, 'Moderator', 'idPodforum'),
+			'korisniks' => array(self::HAS_MANY, 'Korisnik', 'idPodforum'),
 			'temas' => array(self::HAS_MANY, 'Tema', 'idPodforum'),
 		);
 	}

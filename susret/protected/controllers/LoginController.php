@@ -30,6 +30,8 @@ class LoginController extends Controller
 	
 	public function actionLogout()
 	{
+		$user = Korisnik::model()->findByPk(Yii::app()->user->id);
+		Korisnik::model()->updateByPk(Yii::app()->user->id, array('vrijemeOdjave' => new CDbExpression('NOW()')));
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}

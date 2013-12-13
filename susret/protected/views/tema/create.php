@@ -13,5 +13,5 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Tema</h1>
+<h1>Otvori temu</h1>
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
