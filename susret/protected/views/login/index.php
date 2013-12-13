@@ -13,7 +13,7 @@ $this->breadcrumbs=array(
 <h1>Prijava </h1>
 
 <p>Niste prijavljeni na forum. Za daljenje korištenje, prijavite se sa
-	postojećim podacima ili se <a href="/susret/korisnik/create">registrirajte</a></p>
+	postojećim podacima ili se <a href="/susret/korisnik/create">registrirajte</a>.</p>
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(

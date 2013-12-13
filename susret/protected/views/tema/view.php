@@ -16,15 +16,21 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Tema #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->naziv; 
+	$posts = Post::model()->findAll('idTema=:id', array(':id'=>$model->id));?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'naziv',
-		'idPodforum',
-		'idAutor',
-		'brojPregleda',
-	),
-)); ?>
+<?php
+if (empty($posts)) {
+	?>  </br></br> <h2>Tema ne sadrži niti jedan post.</h2> <?php
+	
+} else {
+	?>
+	<?php
+		foreach ($posts as $post) { ?>
+	<div class="view" id='<?php echo $post->id; ?>'>
+		<b><font size="4">
+			<?php echo $post->tekst; ?>
+			</font></b>
+	</div> 
+	
+<?php } } ?>
