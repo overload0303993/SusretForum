@@ -15,22 +15,11 @@ $this->menu=array(
 	array('label'=>'Manage Tema', 'url'=>array('admin')),
 );
 ?>
+<html></html>
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$dataProvider,
+	'viewData'=>array('model'=>$model), 
+	'itemView'=>'_view',
+	'summaryText'=>'',
+));?>
 
-<h1><?php echo $model->naziv; 
-	$posts = Post::model()->findAll('idTema=:id', array(':id'=>$model->id));?></h1>
-
-<?php
-if (empty($posts)) {
-	?>  </br></br> <h2>Tema ne sadrži niti jedan post.</h2> <?php
-	
-} else {
-	?>
-	<?php
-		foreach ($posts as $post) { ?>
-	<div class="view" id='<?php echo $post->id; ?>'>
-		<b><font size="4">
-			<?php echo $post->tekst; ?>
-			</font></b>
-	</div> 
-	
-<?php } } ?>

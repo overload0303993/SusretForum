@@ -74,11 +74,11 @@ class KorisnikController extends Controller {
 				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
-			} elseif(empty($model->rola)) {
+			} elseif (empty($model->rola)) {
 				$this->greskaRola = "Rola je obavezna!";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
-			} elseif(empty($model->drugaLozinka) || empty ($model->password)) {
+			} elseif (empty($model->drugaLozinka) || empty($model->password)) {
 				$this->passGreska = "Obje lozinke su obavezne.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
@@ -103,7 +103,7 @@ class KorisnikController extends Controller {
 //				$this->redirect(array('view','id'=>$model->id));
 				try {
 					if ($model->save()) {
-						if(!empty($uploadedFile)) {
+						if (!empty($uploadedFile)) {
 							$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/" . $filename . '.' . $ext);
 						}
 						$this->redirect(array('/'));
@@ -139,13 +139,23 @@ class KorisnikController extends Controller {
 			$uploadedFile = CUploadedFile::getInstance($model, 'avatar');
 
 			try {
-				if ($model->save()) {
-					if (!empty($uploadedFile)) { 
+				
+					if (!empty($uploadedFile)) {
 						//spremi novu sliku iz "uploadedFile" pod starim imenom da ne radim ponovo svu logiku ponovo
+						if (!$model->avatar) {
+							$path_info = pathinfo($uploadedFile);
+							$ext = $path_info['extension'];
+							$date = new DateTime();
+							$filename = strval($date->getTimestamp()) . $model->userName;
+							$file = $filename . '.' . $ext;
+							$model->avatar = $file;
+							$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/" . $file);
+						}
 						$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/" . $model->avatar);
 					}
-					$this->redirect(array('view', 'id' => $model->id));
-				}
+					if ($model->save()) {
+						$this->redirect(array('view', 'id' => $model->id));
+					}
 			} catch (CDbException $e) {
 				header("Location : /susret/korisnik/create");
 			}

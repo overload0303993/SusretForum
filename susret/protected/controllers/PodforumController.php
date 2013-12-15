@@ -124,7 +124,7 @@ class PodforumController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Podforum',
-				array('pagination'=>array('pageSize'=>20,),
+				array('pagination'=>array('pageSize'=>50,),
 				));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
