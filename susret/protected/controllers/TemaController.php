@@ -50,16 +50,16 @@ class TemaController extends Controller {
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id) {
-		$dataProvider = new CActiveDataProvider('Post', array(
-		'pagination' => array(
-		'pageSize' => Parametri::model()->findByPk(1)->vrijednost,
-		),
-		'criteria' => array(
-		'condition' => 'idTema=' . $id,
-		)));
+		
+		$posts = Post::model()->findAll('idTema=:id', array(':id'=>$id));
+		$total = count($posts);
+		$pages = new CPagination($total);
+		$pages->setPageSize(Parametri::model()->findByPk(1)->vrijednost);
+		
 		$this->render('view', array(
 			'model' => $this->loadModel($id),
-			'dataProvider' => $dataProvider,
+			'posts' => $posts,
+			'pages' => $pages,
 		));
 	}
 

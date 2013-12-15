@@ -15,7 +15,11 @@
 	?>
 	<?php
 	?>
-	<h1><?php echo $model->naziv; ?></h1>
+	<h1><?php 
+		if($cnt == 0) {
+			$cnt += 1;
+			echo $model->naziv; 
+		}?></h1>
 		
 		<?php if ($data->idTema == $model->id) { ?>
 		<div class="view">
