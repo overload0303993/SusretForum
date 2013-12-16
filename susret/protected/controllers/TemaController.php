@@ -51,7 +51,7 @@ class TemaController extends Controller {
 	 */
 	public function actionView($id) {
 		
-		$posts = Post::model()->findAll('idTema=:id', array(':id'=>$id));
+		$posts = Post::model()->findAll(array('order'=>'datumPost', 'condition'=>'idTema=:x', 'params'=>array(':x'=>$id)));
 		$total = count($posts);
 		$pages = new CPagination($total);
 		$pages->setPageSize(Parametri::model()->findByPk(1)->vrijednost);

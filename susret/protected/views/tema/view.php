@@ -25,11 +25,13 @@ $this->menu = array(
 	array('label' => 'Manage Tema', 'url' => array('admin')),
 );?>
 
-<h1><?php echo $model->naziv; ?></h1>
+<h1><?php echo $model->naziv;	
+	Tema::model()->updateByPk($model->id, array('brojPregleda' => $model->brojPregleda + 1));?></h1>
 
 	<?php 
-		$start = $pages->getCurrentPage();
-		$end = $start + $pages->getPageSize();
+		//majke mi ako ja znam zaš ovo dobro radi :)
+		$start = $pages->getCurrentPage() * $pages->getPageSize();
+		$end = ($pages->getCurrentPage() + 1) * $pages->getPageSize();
 		for ($i=$start; $i < count($posts) && $i < $end; $i++) { ?>
 		<div class="view">
 			<table>
@@ -38,6 +40,7 @@ $this->menu = array(
 						<?php
 						$post = $posts[$i];
 						$user = Korisnik::model()->findByPk($post->idAutor);
+						?><a id="<?php echo ($i + 1) ;?>"></a><?php
 						echo $user->userName;
 						if ($user->avatar) {
 							$image = "/susret/userImages/" . $user->avatar;
@@ -83,7 +86,7 @@ $this->menu = array(
 			</table>
 
 		</div>
-		<?php }	?>
+	<?php }	?>
 <?php $this->widget('CLinkPager', array(
 	'pages'=>$pages,
 ));

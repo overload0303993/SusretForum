@@ -78,7 +78,10 @@
 					?>
 					<td><?php echo $tema->brojPregleda; ?></td>
 					<td><?php
-						echo $post['id'] . "</br>";
+						$cntPost = count($posts);
+						$page = ceil($cntPost / $params->vrijednost);
+						$address = "/susret/tema/" . $tema->id . "?page=" . $page . "#" . $cntPost;
+						?><a href="<?php echo $address; ?>">Zadnji post</a><br><?php
 						$date = "";
 						if (!empty($post)) {
 							$date = new DateTime($post['datumPost']);
