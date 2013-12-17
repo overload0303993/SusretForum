@@ -76,17 +76,36 @@ $this->menu = array(
 						<td>Post napisan: <?php  $date = new DateTime($post->datumPost);
 													echo $date->format('d.m.Y h:m') . "\t"; ?></td>
 							</tr></table>
-						<div class="view">
+						<div style="padding: 5px">
 							<?php
-							echo $post->tekst;
+								$qoute = Post::model()->find('id=:idCitiran', array(':idCitiran' => $post->idCitiran));
+								if(!empty($qoute)) { ?>
+									<div style="background-color: #FFF6BF; padding: 5px; border: 1px solid #FFA0A2; margin: 10px">
+										<?php echo $qoute->tekst; ?>
+									</div>
+								<?php }
+								echo $post->tekst;
 							?>
 						</div>
 					</td>
 				</tr>
 			</table>
-
+			<div style="text-align: right">
+				<?php 
+				echo CHtml::button('Citiraj', array('submit' => array('/tema/create',
+						'pdfId' => $model->id)));
+				echo CHtml::button('Uredi', array('submit' => array('/tema/create',
+						'pdfId' => $model->id)));
+				?>	
+			</div>
 		</div>
 	<?php }	?>
+	<div style="text-align: right">
+				<?php 
+				echo CHtml::button('Odgovori', array('submit' => array('/tema/create',
+						'pdfId' => $model->id)));
+				?>	
+	</div>
 <?php $this->widget('CLinkPager', array(
 	'pages'=>$pages,
 ));

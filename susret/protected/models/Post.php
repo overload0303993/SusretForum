@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'post':
  * @property integer $id
+ * @property integer $idCitiran
  * @property string $tekst
  * @property integer $idTema
  * @property integer $idAutor
@@ -33,10 +34,10 @@ class Post extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('tekst, idTema, idAutor, datumPost', 'required'),
-			array('idTema, idAutor', 'numerical', 'integerOnly'=>true),
+			array('idCitiran, idTema, idAutor', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, tekst, idTema, idAutor, datumPost', 'safe', 'on'=>'search'),
+			array('id, idCitiran, tekst, idTema, idAutor, datumPost', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +61,7 @@ class Post extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'idCitiran' => 'Id Citiran',
 			'tekst' => 'Tekst',
 			'idTema' => 'Id Tema',
 			'idAutor' => 'Id Autor',
@@ -86,6 +88,7 @@ class Post extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('idCitiran',$this->idCitiran);
 		$criteria->compare('tekst',$this->tekst,true);
 		$criteria->compare('idTema',$this->idTema);
 		$criteria->compare('idAutor',$this->idAutor);
