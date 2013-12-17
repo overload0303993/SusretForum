@@ -88,11 +88,11 @@
 							$today = new DateTime(date('d.m.Y.'));
 							$yesterday = new DateTime(date('d.m.Y.', time() - (24 * 60 * 60)));
 							if ($date->format('d.m.Y.') == $today->format('d.m.Y.')) {
-								echo "danas u " . $date->format('H:m');
+								echo "danas u " . $date->format('H:i');
 							} else if ($date->format('d.m.Y.') == $yesterday->format('d.m.Y.')) {
-								echo "jučer u " . $date->format('H:m');
+								echo "jučer u " . $date->format('H:i');
 							} else {
-								echo $date->format('d.m.Y.') . " u " . $date->format('H:m');
+								echo $date->format('d.m.Y.') . " u " . $date->format('H:i');
 							}
 						}
 						?></td></font></b></tr></table></div> 

@@ -74,7 +74,7 @@ $this->menu = array(
 						<td>Broj posta u sustavu: <?php echo $post->id . "\t"; ?></td>
 						<td>Broj posta u temi: <?php echo ($i+1) . "\t"; ?></td>
 						<td>Post napisan: <?php  $date = new DateTime($post->datumPost);
-													echo $date->format('d.m.Y h:m') . "\t"; ?></td>
+													echo $date->format('d.m.Y H:i') . "\t"; ?></td>
 							</tr></table>
 						<div style="padding: 5px">
 							<?php
@@ -92,18 +92,25 @@ $this->menu = array(
 			</table>
 			<div style="text-align: right">
 				<?php 
-				echo CHtml::button('Citiraj', array('submit' => array('/tema/create',
+				echo CHtml::button('Citiraj', array('submit' => array('/post/create',
+						'postId' => $post->id, 'idTema' => $model->id)));
+				$post = Yii::app()->db->createCommand()
+									->select('post.*')
+									->from('post')
+									->where($model->id . '=post.idTema')
+									->order('datumPost desc')->limit('1')->queryRow();
+				if($post['idAutor'] == Yii::app()->user->id && ($i == count($posts)-1 || $i == $end-1)) {
+					echo CHtml::button('Uredi', array('submit' => array('/tema/create',
 						'pdfId' => $model->id)));
-				echo CHtml::button('Uredi', array('submit' => array('/tema/create',
-						'pdfId' => $model->id)));
+				}
 				?>	
 			</div>
 		</div>
 	<?php }	?>
 	<div style="text-align: right">
 				<?php 
-				echo CHtml::button('Odgovori', array('submit' => array('/tema/create',
-						'pdfId' => $model->id)));
+				echo CHtml::button('Odgovori', array('submit' => array('/post/create',
+						'idTema' => $model->id)));
 				?>	
 	</div>
 <?php $this->widget('CLinkPager', array(

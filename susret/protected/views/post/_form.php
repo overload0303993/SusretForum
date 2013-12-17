@@ -17,30 +17,14 @@
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'tekst'); ?>
 		<?php echo $form->textArea($model,'tekst',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'tekst'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'idTema'); ?>
-		<?php echo $form->textField($model,'idTema'); ?>
-		<?php echo $form->error($model,'idTema'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'idAutor'); ?>
-		<?php echo $form->textField($model,'idAutor'); ?>
-		<?php echo $form->error($model,'idAutor'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'datumPost'); ?>
-		<?php echo $form->textField($model,'datumPost'); ?>
-		<?php echo $form->error($model,'datumPost'); ?>
+		<?php 
+			if($this->greskaPostTekst) { ?>
+				</br> <font color="red"><?php
+					echo $this->greskaPostTekst; ?></font>
+			<?php }?>
 	</div>
 
 	<div class="row buttons">

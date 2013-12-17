@@ -6,7 +6,8 @@ class PostController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
+	public $greskaPostTekst = "";
 
 	/**
 	 * @return array action filters
@@ -70,8 +71,23 @@ class PostController extends Controller
 		if(isset($_POST['Post']))
 		{
 			$model->attributes=$_POST['Post'];
+			if(empty($model->tekst)) {
+				$this->greskaPostTekst = "Post mora sadržavati barem 1 znak.";
+				header("Location : " . Yii::app()->request->requestUri);
+			}
+			$model->idTema = $_GET['idTema'];
+			$model->idAutor = Yii::app()->user->id;
+			if(isset($_GET['postId'])) {
+				$model->idCitiran = $_GET['postId'];
+			}
+			$model->datumPost = new CDbExpression('NOW()');
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$posts = Post::model()->findAll('idTema=:id', array(':id' => $model->idTema));
+				$params = Parametri::model()->findByPk(1);
+				$cntPost = count($posts);
+				$page = ceil($cntPost / $params->vrijednost);
+				$address = "/tema/" . $model->idTema . "?page=" . $page . "#" . $cntPost;
+				$this->redirect(array($address));
 		}
 
 		$this->render('create',array(
