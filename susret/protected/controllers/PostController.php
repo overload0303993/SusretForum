@@ -110,8 +110,17 @@ class PostController extends Controller
 		if(isset($_POST['Post']))
 		{
 			$model->attributes=$_POST['Post'];
+			if(empty($model->tekst)) {
+				$this->greskaPostTekst = "Post mora sadržavati barem 1 znak.";
+				header("Location : " . Yii::app()->request->requestUri);
+			}
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$posts = Post::model()->findAll('idTema=:id', array(':id' => $model->idTema));
+				$params = Parametri::model()->findByPk(1);
+				$cntPost = count($posts);
+				$page = ceil($cntPost / $params->vrijednost);
+				$address = "/tema/" . $model->idTema . "?page=" . $page . "#" . $cntPost;
+				$this->redirect(array($address));
 		}
 
 		$this->render('update',array(

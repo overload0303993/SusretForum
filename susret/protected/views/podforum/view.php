@@ -39,6 +39,12 @@
 	?>
 
 	<?php
+	
+	
+	if(!Yii::app()->user->checkAccess('istrazivac') && $model->id == 11) {
+		header('Location: /susret/errors/accessDenied');
+	}
+	
 	if (empty($teme)) {
 		?>  </br></br> <h2>Na ovom podforumu nema otvorenih tema.</h2> <?php
 	} else {

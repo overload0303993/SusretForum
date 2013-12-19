@@ -48,7 +48,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($post,'tekst'); ?>
-		<?php echo $form->textArea($post, 'tekst', array('maxlength' => 300, 'rows' => 6, 'cols' => 50)); ?>
+		<?php echo $form->textArea($post, 'tekst', array('maxlength' => 3000000, 'rows' => 6, 'cols' => 50)); ?>
 		</br> <font color="red">
 			<?php echo $this->greskaPost; ?></font>
 	</div>

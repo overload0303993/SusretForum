@@ -11,6 +11,10 @@
 	<?php
 	/* @var $this PodforumController */
 	/* @var $data Podforum */
+	
+	if(Yii::app()->user->isGuest) {
+		$this->render('error');
+	}
 	?>
 
 	<?php $name = CHtml::encode($data->naziv); 

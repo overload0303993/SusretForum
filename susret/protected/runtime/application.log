@@ -11148,3 +11148,1187 @@ Stack trace:
 REQUEST_URI=/susret/css/my.css
 HTTP_REFERER=http://localhost/susret/tema/5?page=1
 ---
+2013/12/19 09:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:44:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "errors/accessDenied".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('errors/accessDe...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/errors/accessDenied
+---
+2013/12/19 09:44:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/login".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/login
+---
+2013/12/19 09:44:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "susret".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('susret')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/susret
+---
+2013/12/19 09:45:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/error".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/error')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/error
+---
+2013/12/19 09:45:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/error".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/error')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/error
+---
+2013/12/19 09:45:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/error".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/error')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/error
+---
+2013/12/19 09:46:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/error".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/error')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/error
+---
+2013/12/19 09:46:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/error".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/error')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/error
+---
+2013/12/19 09:46:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/site/error
+---
+2013/12/19 09:46:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "errro".' in D:\xampp\htdocs\susret\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(270): CController->missingAction('errro')
+#1 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('errro')
+#2 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('login/errro')
+#3 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/susret/login/errro
+---
+2013/12/19 09:46:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/login/errro
+---
+2013/12/19 09:46:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Page not found.' in D:\xampp\htdocs\susret\protected\controllers\LoginController.php:45
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\actions\CInlineAction.php(49): LoginController->actionError()
+#1 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('error')
+#5 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('login/error')
+#6 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/susret/login/error
+---
+2013/12/19 09:46:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/login/error
+---
+2013/12/19 09:46:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "susret".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('susret')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/susret
+---
+2013/12/19 09:46:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/susret
+---
+2013/12/19 09:47:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:47:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/login".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/login
+---
+2013/12/19 09:47:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/site/login
+---
+2013/12/19 09:47:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:47:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:47:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:47:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 09:47:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "errors/accessDenied".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('errors/accessDe...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/errors/accessDenied
+---
+2013/12/19 09:47:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/errors/accessDenied
+---
+2013/12/19 09:48:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "errors/accessDenied".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('errors/accessDe...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/errors/accessDenied
+---
+2013/12/19 09:48:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "errors/accessDenied".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('errors/accessDe...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/errors/accessDenied
+---
+2013/12/19 09:48:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/errors/accessDenied
+---
+2013/12/19 09:50:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 09:50:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:50:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/login".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/login
+---
+2013/12/19 09:50:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/site/login
+---
+2013/12/19 09:50:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:50:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/login".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/login
+---
+2013/12/19 09:50:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/site/login
+---
+2013/12/19 09:51:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:51:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/login".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/login
+---
+2013/12/19 09:51:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/site/login
+---
+2013/12/19 09:52:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/login".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/login
+---
+2013/12/19 09:52:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/site/login
+---
+2013/12/19 09:53:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/login".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/login
+---
+2013/12/19 09:53:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/site/login
+---
+2013/12/19 09:53:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/login".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/login
+---
+2013/12/19 09:53:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/site/login
+---
+2013/12/19 09:53:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:53:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 09:54:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum/view/11
+---
+2013/12/19 09:54:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 09:58:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/update/2
+---
+2013/12/19 09:58:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 10:04:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:04:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum/view/1
+---
+2013/12/19 10:04:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/tema/view/4
+---
+2013/12/19 10:05:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/post/update/16
+---
+2013/12/19 10:13:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/tema/4?page=1
+---
+2013/12/19 10:13:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/post/update/16
+---
+2013/12/19 10:13:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/tema/4?page=1
+---
+2013/12/19 10:37:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:37:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:37:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/shadow.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/shadow.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:37:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/arrows-ffffff.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:40:46 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/post/admin
+---
+2013/12/19 10:40:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/post/admin
+---
+2013/12/19 10:41:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/post/admin/5
+---
+2013/12/19 10:41:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/post/admin/5
+---
+2013/12/19 10:56:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admihn".' in D:\xampp\htdocs\susret\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(270): CController->missingAction('admihn')
+#1 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admihn')
+#2 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('tema/admihn')
+#3 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/susret/tema/admihn
+---
+2013/12/19 10:56:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/tema/admihn
+---
+2013/12/19 10:56:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('tema/admin')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/tema/admin
+---
+2013/12/19 10:56:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/tema/admin
+---
+2013/12/19 10:56:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "4".' in D:\xampp\htdocs\susret\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(270): CController->missingAction('4')
+#1 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('4')
+#2 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('tema/4/admin')
+#3 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/susret/tema/4/admin
+---
+2013/12/19 10:56:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/tema/4/admin
+---
+2013/12/19 10:57:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/post/admin
+---
+2013/12/19 10:57:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/post/admin
+---
+2013/12/19 10:58:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:58:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/shadow.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/shadow.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:58:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/arrows-ffffff.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:58:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/post/admin
+---
+2013/12/19 10:58:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/post/admin
+---
+2013/12/19 10:59:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:59:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/shadow.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/shadow.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:59:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/arrows-ffffff.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2013/12/19 10:59:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/post/admin
+---
+2013/12/19 10:59:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/post/admin
+---
+2013/12/19 11:03:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 11:03:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/login".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/site/login
+---
+2013/12/19 11:03:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/site/login
+---
+2013/12/19 11:03:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 11:03:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('podforum/admin')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/podforum/admin
+HTTP_REFERER=http://localhost/susret/
+---
+2013/12/19 11:03:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum/admin
+---
+2013/12/19 11:03:46 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('podforum/admin')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/podforum/admin
+---
+2013/12/19 11:03:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum/admin
+---
+2013/12/19 11:06:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebKorisnik), 'You are not aut...')
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('podforum/admin')
+#9 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/susret/podforum/admin
+---
+2013/12/19 11:06:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/podforum/admin
+---
+2013/12/19 11:06:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:08:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:08:22 [error] [exception.CException] exception 'CException' with message 'The "dataProvider" property cannot be empty.' in D:\xampp\htdocs\susret\framework\zii\widgets\CBaseListView.php:109
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#1 D:\xampp\htdocs\susret\framework\web\CBaseController.php(147): CGridView->init()
+#2 D:\xampp\htdocs\susret\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 D:\xampp\htdocs\susret\protected\views\korisnik\admin.php(63): CBaseController->widget('zii.widgets.gri...', Array)
+#4 D:\xampp\htdocs\susret\framework\web\CBaseController.php(126): require('D:\xampp\htdocs...')
+#5 D:\xampp\htdocs\susret\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(869): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#7 D:\xampp\htdocs\susret\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php(203): CController->render('admin', Array)
+#9 D:\xampp\htdocs\susret\framework\web\actions\CInlineAction.php(49): KorisnikController->actionAdmin()
+#10 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#13 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#15 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('korisnik/admin')
+#16 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/susret/korisnik/admin
+---
+2013/12/19 11:08:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:08:58 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:11:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:28:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:28:36 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:28:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin?Korisnik%5Bid%5D=&Korisnik%5BuserName%5D=mister11&Korisnik%5Bavatar%5D=&Korisnik%5Bspol%5D=&Korisnik%5Bstarost%5D=&Korisnik%5BdatumReg%5D=&Korisnik%5Brang%5D=&Korisnik%5Bpotpis%5D=&yt0=Search
+---
+2013/12/19 11:30:03 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:30:03 [error] [php] Undefined variable: dataProvider (D:\xampp\htdocs\susret\protected\views\korisnik\admin.php:45)
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(869): KorisnikController->renderFile()
+#1 D:\xampp\htdocs\susret\framework\web\CController.php(782): KorisnikController->renderPartial()
+#2 D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php(203): KorisnikController->render()
+#3 D:\xampp\htdocs\susret\framework\web\actions\CInlineAction.php(49): KorisnikController->actionAdmin()
+#4 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(133): KorisnikController->runAction()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\susret\framework\web\CController.php(265): KorisnikController->runActionWithFilters()
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): KorisnikController->run()
+#9 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\susret\index.php(13): CWebApplication->run()
+REQUEST_URI=/susret/korisnik/admin?Korisnik%5Bid%5D=&Korisnik%5BuserName%5D=mister11&Korisnik%5Bavatar%5D=&Korisnik%5Bspol%5D=&Korisnik%5Bstarost%5D=&Korisnik%5BdatumReg%5D=&Korisnik%5Brang%5D=&Korisnik%5Bpotpis%5D=&yt0=Search
+in D:\xampp\htdocs\susret\protected\views\korisnik\admin.php (45)
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (203)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:30:47 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:30:47 [error] [exception.CException] exception 'CException' with message 'Korisnik and its behaviors do not have a method or closure named "getData".' in D:\xampp\htdocs\susret\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 D:\xampp\htdocs\susret\framework\zii\widgets\CBaseListView.php(111): CActiveRecord->__call('getData', Array)
+#2 D:\xampp\htdocs\susret\framework\zii\widgets\CBaseListView.php(111): Korisnik->getData()
+#3 D:\xampp\htdocs\susret\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#4 D:\xampp\htdocs\susret\framework\web\CBaseController.php(147): CGridView->init()
+#5 D:\xampp\htdocs\susret\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#6 D:\xampp\htdocs\susret\protected\views\korisnik\admin.php(63): CBaseController->widget('zii.widgets.gri...', Array)
+#7 D:\xampp\htdocs\susret\framework\web\CBaseController.php(126): require('D:\xampp\htdocs...')
+#8 D:\xampp\htdocs\susret\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\xampp\htdocs...', Array, true)
+#9 D:\xampp\htdocs\susret\framework\web\CController.php(869): CBaseController->renderFile('D:\xampp\htdocs...', Array, true)
+#10 D:\xampp\htdocs\susret\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#11 D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php(203): CController->render('admin', Array)
+#12 D:\xampp\htdocs\susret\framework\web\actions\CInlineAction.php(49): KorisnikController->actionAdmin()
+#13 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\xampp\htdocs\susret\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('korisnik/admin')
+#19 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/susret/korisnik/admin?Korisnik%5Bid%5D=&Korisnik%5BuserName%5D=mister11&Korisnik%5Bavatar%5D=&Korisnik%5Bspol%5D=&Korisnik%5Bstarost%5D=&Korisnik%5BdatumReg%5D=&Korisnik%5Brang%5D=&Korisnik%5Bpotpis%5D=&yt0=Search
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:31:00 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:31:12 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:31:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin?Korisnik%5Bid%5D=&Korisnik%5BuserName%5D=mister11&Korisnik%5Bavatar%5D=&Korisnik%5Bspol%5D=&Korisnik%5Bstarost%5D=&Korisnik%5BdatumReg%5D=&Korisnik%5Brang%5D=&Korisnik%5Bpotpis%5D=&yt0=Search
+---
+2013/12/19 11:32:01 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:32:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin?Korisnik%5Bid%5D=&Korisnik%5BuserName%5D=mister11&Korisnik%5Bavatar%5D=&Korisnik%5Bspol%5D=&Korisnik%5Bstarost%5D=&Korisnik%5BdatumReg%5D=&Korisnik%5Brang%5D=&Korisnik%5Bpotpis%5D=&yt0=Search
+---
+2013/12/19 11:32:21 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:32:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin?Korisnik%5Bid%5D=&Korisnik%5BuserName%5D=mister11&Korisnik%5Bavatar%5D=&Korisnik%5Bspol%5D=&Korisnik%5Bstarost%5D=&Korisnik%5BdatumReg%5D=&Korisnik%5Brang%5D=&Korisnik%5Bpotpis%5D=&yt0=Search
+---
+2013/12/19 11:32:43 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:32:53 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:32:56 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:33:02 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:33:17 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:33:55 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:33:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin?Korisnik%5Bid%5D=&Korisnik%5BuserName%5D=mister11&Korisnik%5Bavatar%5D=&Korisnik%5Bspol%5D=&Korisnik%5Bstarost%5D=&Korisnik%5BdatumReg%5D=&Korisnik%5Brang%5D=&Korisnik%5Bpotpis%5D=&yt0=Search
+---
+2013/12/19 11:34:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:34:47 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:34:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:34:59 [warning] [application] Failed to set unsafe attribute "avatar" of "Korisnik".
+in D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php (199)
+in D:\xampp\htdocs\susret\index.php (13)
+2013/12/19 11:38:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:39:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:40:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:41:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:41:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:42:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/admin
+---
+2013/12/19 11:42:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/view/19
+---
+2013/12/19 11:45:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/my.css".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('css/my.css')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/css/my.css
+HTTP_REFERER=http://localhost/susret/korisnik/view/19
+---

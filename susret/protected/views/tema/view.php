@@ -100,8 +100,7 @@ $this->menu = array(
 									->where($model->id . '=post.idTema')
 									->order('datumPost desc')->limit('1')->queryRow();
 				if($post['idAutor'] == Yii::app()->user->id && ($i == count($posts)-1 || $i == $end-1)) {
-					echo CHtml::button('Uredi', array('submit' => array('/tema/create',
-						'pdfId' => $model->id)));
+					echo CHtml::button('Uredi', array('submit' => array('/post/update/' . $post['id'])));
 				}
 				?>	
 			</div>
