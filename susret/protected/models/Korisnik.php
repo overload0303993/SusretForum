@@ -49,20 +49,20 @@ class Korisnik extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		   return array(
-            array('userName, password, datumReg, brojPostova, rang, rola', 'required'),
-			array('drugaLozinka', 'required'),
-			array('starost, brojPostova, rang', 'numerical', 'integerOnly'=>true),
+			array('userName, password, datumReg, brojPostova, rang, rola', 'required'),
+			array('drugaLozinka', 'required', 'on'=>'create'),
+			array('brojPostova', 'numerical', 'integerOnly'=>true),
             array('userName', 'length', 'max'=>30),
             array('password', 'length', 'max'=>32),
-			array('drugaLozinka', 'length', 'max'=>32),
-			array('password', 'compare', 'compareAttribute'=>'drugaLozinka', 'message'=>"Lozinke nisu jednake!"),
+			array('drugaLozinka', 'length', 'max'=>32, 'on'=>'create'),
+			array('password', 'compare', 'compareAttribute'=>'drugaLozinka', 'message'=>"Lozinke nisu jednake!", 'on'=>'create'),
 			array('avatar', 'length', 'max'=>255, 'on'=>'insert,update'),
 			array('avatar', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true),
             array('spol', 'length', 'max'=>1),
-            array('potpis, vrijemeOdjave', 'safe'),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, userName, password, avatar, spol, starost, datumReg, brojPostova, rang, potpis, rola, vrijemeOdjave, idPodforum', 'safe', 'on'=>'search'),
+            array('datumRodjenja, potpis, vrijemePrijave, vrijemeOdjave', 'safe'),
+//            // The following rule is used by search().
+//            // @todo Please remove those attributes that should not be searched.
+            array('id, userName, password, avatar, spol, datumRodjenja, datumReg, brojPostova, rang, potpis, rola, vrijemePrijave, vrijemeOdjave, idPodforum', 'safe', 'on'=>'search'),
         );
 	}
 	/**
@@ -86,25 +86,25 @@ class Korisnik extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		 return array(
+	 public function attributeLabels()
+    {
+        return array(
             'id' => 'ID',
             'userName' => 'User Name',
             'password' => 'Password',
-			'drugaLozinka' => "Druga lozinka",
             'avatar' => 'Avatar',
             'spol' => 'Spol',
-            'starost' => 'Starost',
+            'datumRodjenja' => 'Datum Rodjenja',
             'datumReg' => 'Datum Reg',
             'brojPostova' => 'Broj Postova',
             'rang' => 'Rang',
             'potpis' => 'Potpis',
             'rola' => 'Rola',
+            'vrijemePrijave' => 'Vrijeme Prijave',
             'vrijemeOdjave' => 'Vrijeme Odjave',
             'idPodforum' => 'Id Podforum',
         );
-	}
+    }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -119,29 +119,30 @@ class Korisnik extends CActiveRecord
 	 * based on the search/filter conditions.
 	 */
 	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+    {
+        // @todo Please modify the following code to remove attributes that should not be searched.
 
-		$criteria=new CDbCriteria;
+        $criteria=new CDbCriteria;
 
         $criteria->compare('id',$this->id);
         $criteria->compare('userName',$this->userName,true);
         $criteria->compare('password',$this->password,true);
         $criteria->compare('avatar',$this->avatar,true);
         $criteria->compare('spol',$this->spol,true);
-        $criteria->compare('starost',$this->starost);
+        $criteria->compare('datumRodjenja',$this->datumRodjenja,true);
         $criteria->compare('datumReg',$this->datumReg,true);
         $criteria->compare('brojPostova',$this->brojPostova);
         $criteria->compare('rang',$this->rang);
         $criteria->compare('potpis',$this->potpis,true);
         $criteria->compare('rola',$this->rola);
+        $criteria->compare('vrijemePrijave',$this->vrijemePrijave,true);
         $criteria->compare('vrijemeOdjave',$this->vrijemeOdjave,true);
         $criteria->compare('idPodforum',$this->idPodforum);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));
-	}
+    }
 
 	/**
 	 * Returns the static model of the specified AR class.

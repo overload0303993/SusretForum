@@ -22,6 +22,7 @@ class LoginController extends Controller
 			$model->attributes=$_POST['Login'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
+				Korisnik::model()->updateByPk(Yii::app()->user->id, array('vrijemePrijave' => new CDbExpression('NOW()')));
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form

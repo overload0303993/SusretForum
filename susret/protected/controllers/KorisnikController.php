@@ -128,18 +128,24 @@ class KorisnikController extends Controller {
 	 */
 	public function actionUpdate($id) {
 		$model = $this->loadModel($id);
-
+		$oldUser = $model->userName;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 
 		if (isset($_POST['Korisnik'])) {
-			$_POST['Banner']['avatar'] = $model->avatar;
+			$_POST['Korisnik']['avatar'] = $model->avatar;
 			$model->attributes = $_POST['Korisnik'];
-			$uploadedFile = CUploadedFile::getInstance($model, 'avatar');
-
-			try {
-				
+			$user = Korisnik::model()->find('userName=:userName', array(':userName' => $model->userName));
+			if (!empty($user) && $model->userName != $oldUser) {
+				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
+				header("Location : " . Yii::app()->request->requestUri);
+			} else {
+				$model->brojPostova = intval($model->brojPostova);
+				$model->rang = floatval($model->rang);
+				$uploadedFile = CUploadedFile::getInstance($model, 'avatar');
+				$model->drugaLozinka = "";
+				try {
 					if (!empty($uploadedFile)) {
 						//spremi novu sliku iz "uploadedFile" pod starim imenom da ne radim ponovo svu logiku ponovo
 						if (!$model->avatar) {
@@ -154,13 +160,13 @@ class KorisnikController extends Controller {
 						$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/" . $model->avatar);
 					}
 					if ($model->save()) {
-						$this->redirect(array('view', 'id' => $model->id));
+						$this->redirect(array('/'));
 					}
-			} catch (CDbException $e) {
-				header("Location : /susret/korisnik/create");
+				} catch (CDbException $e) {
+					header("Location : /susret/korisnik/create");
+				}
 			}
 		}
-
 		$this->render('update', array(
 			'model' => $model,
 		));

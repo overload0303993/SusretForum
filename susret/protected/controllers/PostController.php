@@ -75,12 +75,18 @@ class PostController extends Controller
 				$this->greskaPostTekst = "Post mora sadržavati barem 1 znak.";
 				header("Location : " . Yii::app()->request->requestUri);
 			}
+			if(strlen($model->tekst) > 10000) {
+				$this->greskaPostTekst = "Post mora sadržavati manje od 10000 znakova.";
+				header("Location : " . Yii::app()->request->requestUri);
+			}
 			$model->idTema = $_GET['idTema'];
 			$model->idAutor = Yii::app()->user->id;
 			if(isset($_GET['postId'])) {
 				$model->idCitiran = $_GET['postId'];
 			}
 			$model->datumPost = new CDbExpression('NOW()');
+			$user = Korisnik::model()->findByPk(Yii::app()->user->id);
+			Korisnik::model()->updateByPk(Yii::app()->user->id, array('brojPostova' => $user->brojPostova + 1));
 			if($model->save())
 				$posts = Post::model()->findAll('idTema=:id', array(':id' => $model->idTema));
 				$params = Parametri::model()->findByPk(1);

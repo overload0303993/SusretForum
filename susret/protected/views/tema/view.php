@@ -29,7 +29,7 @@ $this->menu = array(
 	Tema::model()->updateByPk($model->id, array('brojPregleda' => $model->brojPregleda + 1));?></h1>
 
 	<?php 
-		//majke mi ako ja znam zaš ovo dobro radi :)
+		//yeah...it works...why? well...yeah...I don't know
 		$start = $pages->getCurrentPage() * $pages->getPageSize();
 		$end = ($pages->getCurrentPage() + 1) * $pages->getPageSize();
 		for ($i=$start; $i < count($posts) && $i < $end; $i++) { ?>
@@ -56,8 +56,8 @@ $this->menu = array(
 								 $text = "--";
 							 }
 							 echo "</br>Spol: " . $text;
-							 if ($user->starost) {
-								 $text = $user->starost;
+							 if ($user->datumRodjenja) {
+								 $text = floor((time() - strtotime($user->datumRodjenja) + 7500) / 31556926);
 							 } else {
 								 $text = "--";
 							 }
@@ -84,8 +84,17 @@ $this->menu = array(
 										<?php echo $qoute->tekst; ?>
 									</div>
 								<?php }
-								echo $post->tekst;
-							?>
+								//regex stolen from good guy on stack overflow
+								//have no idea WHY does it work, but it's works and it makes me happy
+								//of course, I know WHAT it does
+								$link = preg_replace('/(?<!http:\/\/)(www.[-a-zA-Z0-9@:%_\+.~#?&\/=]+)/i', 
+										'<a href="http://\1">\1</a>', $post->tekst);
+								echo $link;
+								if(!empty($user->potpis)) { ?>
+									<div style="background-color: #FFFFFF; border: 1px solid #000000; height: min-content; margin: 10px 0; width: 100%;"> </div>
+								<?php echo $user->potpis;
+								}
+								?>
 						</div>
 					</td>
 				</tr>

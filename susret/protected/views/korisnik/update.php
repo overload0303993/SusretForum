@@ -16,6 +16,10 @@ $this->menu=array(
 );
 ?>
 
+<?php if(Yii::app()->user->id != $model->id) {
+	 header("Location: /susret/login/error");
+	} else {
+?>
 <h1>Promijeni podatke</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	<?php $this->renderPartial('edit', array('model'=>$model)); } ?>

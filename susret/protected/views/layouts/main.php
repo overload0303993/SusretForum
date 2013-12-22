@@ -30,19 +30,36 @@
 
 			<!--			<div id="mainmenu">-->
 			<?php
+			
+			
+			
 			$this->widget('ext.CDropDownMenu.XDropDownMenu', array(
 				'items' => array(
 					array('label' => 'Početna', 'url' => array('../susret')),
+					array('label' => 'Pretraživanje', 
+							'url' => '#', 
+							'items' => array(
+								array('label' => 'Po temi', 'url' => array('/tema/admin')),
+								array('label' => 'Po korisniku', 'url' => array('/korisnik/admin')),
+								array('label' => 'Po postu', 'url' => array('/post/view')),), 
+							'visible' => !Yii::app()->user->isGuest),
+					array('label' => 'Informacije o meni', 
+							'url' => array('/korisnik/view/' . Yii::app()->user->id), 
+							'visible' => !Yii::app()->user->isGuest),
+					array('label' => 'Privatne poruke', 
+							'url' => array('/korisnik/view/' . Yii::app()->user->id),
+							'visible' => !Yii::app()->user->isGuest),
+					array('label' => 'Informacije o forumu', 
+							'url' => array('/korisnik/view/' . Yii::app()->user->id),
+							'visible' => !Yii::app()->user->isGuest),
+					array('label' => 'Moderiraj forum',
+							'url' => 'neki url', 
+							'visible' => Yii::app()->user->checkAccess('moderator')),
+					array('label' => 'Parametri i banovi',
+							'url' => 'neki url',
+							'visible' => Yii::app()->user->checkAccess('istrazivac')),
 					array('label'=>'Odjava ('.Yii::app()->user->name.')', 'url'=>array('/login/logout'), 'visible'=>!Yii::app()->user->isGuest),
-					array('label' => 'Pretraživanje', 'url' => '#', 'items' => array(
-							array('label' => 'Po temi', 'url' => array('/tema/admin')),
-							array('label' => 'Po korisniku', 'url' => array('/korisnik/admin')),
-							array('label' => 'Po postu', 'url' => array('/post/view')),
-						),),
-					array('label' => 'Informacije o meni', 'url' => array('/korisnik/view/' . Yii::app()->user->id)),
-					array('label' => 'Privatne poruke', 'url' => array('/korisnik/view/' . Yii::app()->user->id)),
-					array('label' => 'Informacije o forumu', 'url' => array('/korisnik/view/' . Yii::app()->user->id)),
-				),
+					)
 			));
 			?>
 			<!--			</div>-->
