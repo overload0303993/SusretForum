@@ -30,57 +30,68 @@
 
 			<!--			<div id="mainmenu">-->
 			<?php
-			
-			
-			
+			if (!Yii::app()->user->isGuest) {
+				$newPP = 'Privatne poruke';
+				$user = Korisnik::model()->findByPk(Yii::app()->user->id);
+				$ppLast = Privatnaporuka::model()->find('idPrimatelj=:id 
+					ORDER BY datumPoslano desc', array(':id' => $user->id));
+				if ($ppLast) {
+					$timeLogout = strtotime($user->vrijemeOdjave);
+					$timeLast = strtotime($ppLast->datumPoslano);
+					if ($timeLast - $timeLogout > 0) {
+						$newPP = '<b><font color="red">Privatne poruke</font></b>';
+					}
+				}
+			}
 			$this->widget('ext.CDropDownMenu.XDropDownMenu', array(
+				'encodeLabel' => false,
 				'items' => array(
 					array('label' => 'Početna', 'url' => array('../susret')),
-					array('label' => 'Pretraživanje', 
-							'url' => '#', 
-							'items' => array(
-								array('label' => 'Po temi', 'url' => array('/tema/admin')),
-								array('label' => 'Po korisniku', 'url' => array('/korisnik/admin')),
-								array('label' => 'Po postu', 'url' => array('/post/view')),), 
-							'visible' => !Yii::app()->user->isGuest),
-					array('label' => 'Informacije o meni', 
-							'url' => array('/korisnik/view/' . Yii::app()->user->id), 
-							'visible' => !Yii::app()->user->isGuest),
-					array('label' => 'Privatne poruke', 
-							'url' => array('/korisnik/view/' . Yii::app()->user->id),
-							'visible' => !Yii::app()->user->isGuest),
-					array('label' => 'Informacije o forumu', 
-							'url' => array('/korisnik/view/' . Yii::app()->user->id),
-							'visible' => !Yii::app()->user->isGuest),
+					array('label' => 'Pretraživanje',
+						'url' => '#',
+						'items' => array(
+							array('label' => 'Po temi', 'url' => array('/pretrazivanje/tema')),
+							array('label' => 'Po korisniku', 'url' => array('/pretrazivanje/korisnik')),
+							array('label' => 'Po postu', 'url' => array('/pretrazivanje/post')),),
+						'visible' => !Yii::app()->user->isGuest),
+					array('label' => 'Informacije o meni',
+						'url' => array('/korisnik/view/' . Yii::app()->user->id),
+						'visible' => !Yii::app()->user->isGuest),
+					array('label' => $newPP,
+						'url' => array('/privatnaporuka'),
+						'visible' => !Yii::app()->user->isGuest),
+					array('label' => 'Informacije o forumu',
+						'url' => array('/korisnik/view/' . Yii::app()->user->id),
+						'visible' => !Yii::app()->user->isGuest),
 					array('label' => 'Moderiraj forum',
-							'url' => 'neki url', 
-							'visible' => Yii::app()->user->checkAccess('moderator')),
+						'url' => 'neki url',
+						'visible' => Yii::app()->user->checkAccess('moderator')),
 					array('label' => 'Parametri i banovi',
-							'url' => 'neki url',
-							'visible' => Yii::app()->user->checkAccess('istrazivac')),
-					array('label'=>'Odjava ('.Yii::app()->user->name.')', 'url'=>array('/login/logout'), 'visible'=>!Yii::app()->user->isGuest),
-					)
-			));
-			?>
+						'url' => 'neki url',
+						'visible' => Yii::app()->user->checkAccess('istrazivac')),
+					array('label' => 'Odjava (' . Yii::app()->user->name . ')', 'url' => array('/login/logout'), 'visible' => !Yii::app()->user->isGuest),
+				)
+			));?>
+
 			<!--			</div>-->
 			</br></br>
-						<?php //if(isset($this->breadcrumbs)):?>
-						<?php
-						//$this->widget('zii.widgets.CBreadcrumbs', array(
-						//'links'=>$this->breadcrumbs,
-						//)); 
-						?><!-- breadcrumbs -->
-						<?php //endif  ?>
+			<?php //if(isset($this->breadcrumbs)): ?>
+			<?php
+			//$this->widget('zii.widgets.CBreadcrumbs', array(
+			//'links'=>$this->breadcrumbs,
+			//)); 
+			?><!-- breadcrumbs -->
+			<?php //endif  ?>
 
-						<?php echo $content; ?>
+			<?php echo $content; ?>
 
-						<div class="clear"></div>
+			<div class="clear"></div>
 
-						<div id="footer">
-							<?php echo Yii::powered(); ?>
-						</div><!-- footer -->
+			<div id="footer">
+				<?php echo Yii::powered(); ?>
+			</div><!-- footer -->
 
-						</div><!-- page -->
+		</div><!-- page -->
 
-						</body>
-						</html>
+	</body>
+</html>

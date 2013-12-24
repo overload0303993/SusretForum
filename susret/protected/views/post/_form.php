@@ -15,7 +15,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Polja označena <span class="required">*</span> su obvezna.</p>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'tekst'); ?>
