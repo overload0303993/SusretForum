@@ -16,17 +16,19 @@ $this->menu=array(
 );
 
 Korisnik::model()->updateByPk(Yii::app()->user->id, array('vrijemeOdjave' => new CDbExpression('NOW()')));
+$user1 = Korisnik::model()->findByPk($model->idPosiljatelj);
+$user2 = Korisnik::model()->findByPk($model->idPrimatelj);
 ?>
 
-<h1>View Privatnaporuka #<?php echo $model->id; ?></h1>
+<h1>Privatna poruka od <?php echo "<i>".$user1->userName."</i> za <i>" . $user2->userName . "</i>"; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'tekst',
-		'idPosiljatelj',
-		'idPrimatelj',
-		'datumPoslano',
-	),
-)); ?>
+<div class="view">
+<?php echo "<h3>".$model->naslov."</h3>";
+		$date = new DateTime($model->datumPoslano);
+		echo $date->format('d.m.Y. H:i');		
+?>
+	<div class="view">
+		<?php echo $model->tekst;?>
+	</div>
+	<?php echo CHtml::button('Odgovori', array('submit' => array('/privatnaporuka/create', 'idPrimatelj' => $model->idPosiljatelj, 'naslov' => $model->naslov))); ?>
+</div>

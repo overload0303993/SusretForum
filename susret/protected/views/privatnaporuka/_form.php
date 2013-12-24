@@ -13,7 +13,18 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
-)); ?>
+)); 
+if(isset($_GET['idPrimatelj']) && isset($_GET['naslov'])) {
+	$user = Korisnik::model()->findByPk($_GET['idPrimatelj']);
+	$model->idPrimatelj = $user->userName;
+	if(strpos($model->naslov, "RE") != 0) {
+		$model->naslov = "RE:" . $_GET['naslov'];
+	} else {
+		$model->naslov = $_GET['naslov'];
+	}
+}
+
+?>
 
 	<p class="note">Polja označena <span class="required">*</span> su obavezna.</p>
 

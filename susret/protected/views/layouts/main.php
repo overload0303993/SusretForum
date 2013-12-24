@@ -30,8 +30,8 @@
 
 			<!--			<div id="mainmenu">-->
 			<?php
+			$newPP = 'Privatne poruke';
 			if (!Yii::app()->user->isGuest) {
-				$newPP = 'Privatne poruke';
 				$user = Korisnik::model()->findByPk(Yii::app()->user->id);
 				$ppLast = Privatnaporuka::model()->find('idPrimatelj=:id 
 					ORDER BY datumPoslano desc', array(':id' => $user->id));
@@ -61,7 +61,7 @@
 						'url' => array('/privatnaporuka'),
 						'visible' => !Yii::app()->user->isGuest),
 					array('label' => 'Informacije o forumu',
-						'url' => array('/korisnik/view/' . Yii::app()->user->id),
+						'url' => array('/info'),
 						'visible' => !Yii::app()->user->isGuest),
 					array('label' => 'Moderiraj forum',
 						'url' => 'neki url',

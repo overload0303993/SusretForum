@@ -11,6 +11,7 @@ class KorisnikController extends Controller {
 	public $greskaFatal = "";
 	public $greskaRola = "";
 	public $passGreska = "";
+	public $rodGreska = "";
 
 	/**
 	 * @return array action filters
@@ -82,6 +83,10 @@ class KorisnikController extends Controller {
 				$this->passGreska = "Obje lozinke su obavezne.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
+			} else if($model->datumRodjenja > date()) {
+				$this->rodGreska = "Datum nije ispravan.";
+				$model->password = $model->drugaLozinka = '';
+				header("Location : " . Yii::app()->request->requestUri);
 			} else {
 				$model->drugaLozinka = md5(md5($model->drugaLozinka));
 				$model->password = md5(md5($model->password));
@@ -139,6 +144,10 @@ class KorisnikController extends Controller {
 			$user = Korisnik::model()->find('userName=:userName', array(':userName' => $model->userName));
 			if (!empty($user) && $model->userName != $oldUser) {
 				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
+				header("Location : " . Yii::app()->request->requestUri);
+			} else if($model->datumRodjenja > date()) {
+				$this->rodGreska = "Datum nije ispravan.";
+				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
 			} else {
 				$model->brojPostova = intval($model->brojPostova);

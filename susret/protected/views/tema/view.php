@@ -51,7 +51,7 @@
 							?><br>
 							<img src="<?php echo $image ?>" alt="userimg"
 								 width="120px" height="120px"></img>
-							 <?php
+								 <?php
 							 }
 							 $text = "";
 							 if ($user->spol) {
@@ -78,9 +78,9 @@
 								<td>Broj posta u sustavu: <?php echo $post->id . "\t"; ?></td>
 								<td>Broj posta u temi: <?php echo ($i + 1) . "\t"; ?></td>
 								<td>Post napisan: <?php
-								$date = new DateTime($post->datumPost);
-								echo $date->format('d.m.Y H:i') . "\t";
-							 ?></td>
+									$date = new DateTime($post->datumPost);
+									echo $date->format('d.m.Y H:i') . "\t";
+									?></td>
 							</tr></table>
 						<div style="padding: 5px">
 							<?php
@@ -88,7 +88,7 @@
 							if (!empty($qoute)) {
 								?>
 								<div style="background-color: #FFF6BF; padding: 5px; border: 1px solid #FFA0A2; margin: 10px">
-								<?php echo $qoute->tekst; ?>
+									<?php echo $qoute->tekst; ?>
 								</div>
 								<?php
 							}
@@ -108,31 +108,32 @@
 					</td>
 				</tr>
 			</table>
-			<div style="text-align: right">
-				<?php
-				echo CHtml::button('Citiraj', array('submit' => array('/post/create',
-						'postId' => $post->id, 'idTema' => $model->id)));
-				$post = Yii::app()->db->createCommand()
-								->select('post.*')
-								->from('post')
-								->where($model->id . '=post.idTema')
-								->order('datumPost desc')->limit('1')->queryRow();
-				if ($post['idAutor'] == Yii::app()->user->id && ($i == count($posts) - 1 || $i == $end - 1)) {
-					echo CHtml::button('Uredi', array('submit' => array('/post/update/' . $post['id'])));
-				}
-				?>	
+				
+				<div style="text-align: right">
+					<?php
+					echo CHtml::button('Citiraj', array('submit' => array('/post/create',
+							'postId' => $post->id, 'idTema' => $model->id)));
+					$post = Yii::app()->db->createCommand()
+									->select('post.*')
+									->from('post')
+									->where($model->id . '=post.idTema')
+									->order('datumPost desc')->limit('1')->queryRow();
+					if ($post['idAutor'] == Yii::app()->user->id && ($i == count($posts) - 1 || $i == $end - 1)) {
+						echo CHtml::button('Uredi', array('submit' => array('/post/update/' . $post['id'])));
+					}
+					?>	
+				</div>
 			</div>
-		</div>
 		<?php } ?>
-	<div style="text-align: right">
+		<div style="text-align: right">
+			<?php
+			echo CHtml::button('Odgovori', array('submit' => array('/post/create',
+					'idTema' => $model->id)));
+			?>	
+		</div>
 		<?php
-		echo CHtml::button('Odgovori', array('submit' => array('/post/create',
-				'idTema' => $model->id)));
-		?>	
-	</div>
-	<?php
-	$this->widget('CLinkPager', array(
-		'pages' => $pages,
-	));
-	?>
+		$this->widget('CLinkPager', array(
+			'pages' => $pages,
+		));
+		?>
 </html>

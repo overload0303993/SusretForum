@@ -66,7 +66,8 @@
 			'showAnim' => 'fold',
 			'dateFormat' => 'yy-mm-dd', // optional Date formatting
 			'debug' => true,),));?>
-			<?php echo $form->error($model, 'datumRodjenja'); ?>
+			</br> <font color="red"><?php
+				echo $this->rodGreska; ?></font>
 		</div>
 
 	<div class="row">
