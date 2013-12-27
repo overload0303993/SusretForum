@@ -23,6 +23,12 @@ class ModerirajController extends Controller
 	
 	public function actionTema()
 	{
+		$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		if(Ban::model()->find($criteriaA)) {
+			$this->redirect('/susret/error/banned');
+		}
 		if(!Yii::app()->user->checkAccess('moderator')) {
 			$this->redirect('/susret/error/accessDenied');
 		}
@@ -32,6 +38,12 @@ class ModerirajController extends Controller
 	}
 	
 	public function actionPost() {
+		$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		if(Ban::model()->find($criteriaA)) {
+			$this->redirect('/susret/error/banned');
+		}
 		if(!Yii::app()->user->checkAccess('moderator')) {
 			$this->redirect('/susret/error/accessDenied');
 		}
@@ -40,6 +52,12 @@ class ModerirajController extends Controller
 	}
 	
 	public function actionDeleteTema() {
+		$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		if(Ban::model()->find($criteriaA)) {
+			$this->redirect('/susret/error/banned');
+		}
 		if(!Yii::app()->user->checkAccess('moderator')) {
 			$this->redirect('/susret/error/accessDenied');
 		}
@@ -53,6 +71,12 @@ class ModerirajController extends Controller
 	}
 	
 	public function actionDeletePost() {
+		$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		if(Ban::model()->find($criteriaA)) {
+			$this->redirect('/susret/error/banned');
+		}
 		if(!Yii::app()->user->checkAccess('moderator')) {
 			$this->redirect('/susret/error/accessDenied');
 		}

@@ -4,11 +4,13 @@
 odaberite datum do kojeg želite da ban traje.</br></br>
 Ako ste odabrali pogrešnog korisnika, <a href='/susret/ban'>vratite se</a> na prethodnu stranicu.</p>
 
+<p>Ako korisniku želite dodijeliti trajni ban, nemojte odabrati specifičan datum.</p>
+
 <form method="post">
 	<input type="date" name="banDate">
-<form>
-<?php 
-echo CHtml::button("Baniraj", array(
-	'submit' => array('/ban/banned'),
-	'params' => array('id' => $user->id)));
-?>
+	<?php 
+	echo CHtml::button("Baniraj", array(
+		'submit' => array('/ban/banned'),
+		'params' => array('id' => $user->id)));
+	?>
+</form>

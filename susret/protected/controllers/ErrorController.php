@@ -32,4 +32,12 @@ class ErrorController extends Controller {
 	public function actionAccessDenied() {
 		$this->render('accessDenied');
 	}
+	
+	public function actionBanned() {
+		$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		$ban = Ban::model()->find($criteriaA); 
+		$this->render('banned', array('date' => $ban->datumIsteka));
+	}
 }

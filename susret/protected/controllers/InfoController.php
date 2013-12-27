@@ -9,7 +9,7 @@ class InfoController extends Controller
 		$numOfPosts = Post::model()->count();
 		
 		$last24 = new CDbCriteria();
-		$last24->condition = "DATE(vrijemePrijave) = CURDATE()";
+		$last24->condition = "DATE(vrijemePrijave) >= DATE_SUB(CURDATE(), INTERVAL 1 DAY)";
 		$users = Korisnik::model()->findAll($last24);
 		
 		$birth = new CDbCriteria();

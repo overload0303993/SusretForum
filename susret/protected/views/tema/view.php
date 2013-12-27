@@ -11,8 +11,14 @@
 	<?php
 	/* @var $this TemaController */
 	/* @var $model Tema */
-if(Yii::app()->user->isGuest()) {
+if(Yii::app()->user->isGuest) {
 			$this->redirect('/susret/error/accessDenied');
+		}
+		$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		if(Ban::model()->find($criteriaA)) {
+			$this->redirect('/susret/error/banned');
 		}
 	$this->breadcrumbs = array(
 		'Temas' => array('index'),

@@ -83,7 +83,7 @@ class KorisnikController extends Controller {
 				$this->passGreska = "Obje lozinke su obavezne.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
-			} else if($model->datumRodjenja > date()) {
+			} else if($model->datumRodjenja < date()) {
 				$this->rodGreska = "Datum nije ispravan.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
@@ -145,7 +145,7 @@ class KorisnikController extends Controller {
 			if (!empty($user) && $model->userName != $oldUser) {
 				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
 				header("Location : " . Yii::app()->request->requestUri);
-			} else if($model->datumRodjenja > date()) {
+			} else if($model->datumRodjenja < date()) {
 				$this->rodGreska = "Datum nije ispravan.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);

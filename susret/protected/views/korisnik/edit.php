@@ -2,6 +2,13 @@
 /* @var $this KorisnikController */
 /* @var $model Korisnik */
 /* @var $form CActiveForm */
+
+$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		if(Ban::model()->find($criteriaA)) {
+			$this->redirect('/susret/error/banned');
+		}
 ?>
 
 

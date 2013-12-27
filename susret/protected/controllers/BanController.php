@@ -4,13 +4,28 @@ class BanController extends Controller
 {
 	public function actionIndex()
 	{
+		$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		if(Ban::model()->find($criteriaA)) {
+			$this->redirect('/susret/error/banned');
+		}
 		if(!Yii::app()->user->checkAccess('istrazivac')) {
 			$this->redirect('/susret/error/accessDenied');
 		}
-		$this->render('index');
+		$criteria = new CDbCriteria();
+		$criteria->addCondition('DATE(datumIsteka) > CURDATE()');
+		$banned = Ban::model()->findAll($criteria);
+		$this->render('index', array('banned' => $banned));
 	}
 	
 	public function actionInter() {
+		$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		if(Ban::model()->find($criteriaA)) {
+			$this->redirect('/susret/error/banned');
+		}
 		if(!Yii::app()->user->checkAccess('istrazivac')) {
 			$this->redirect('/susret/error/accessDenied');
 		}
@@ -21,16 +36,27 @@ class BanController extends Controller
  	}
 	
 	public function actionBanned() {
+		$criteriaA = new CDbCriteria();
+		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
+		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
+		if(Ban::model()->find($criteriaA)) {
+			$this->redirect('/susret/error/banned');
+		}
 		if(!Yii::app()->user->checkAccess('istrazivac')) {
 			$this->redirect('/susret/error/accessDenied');
 		}
-		if(isset($_POST['banDate']) && isset($_POST['id'])) {
+		if(isset($_POST['banDate']) && !empty($_POST['banDate']) && isset($_POST['id'])) {
 			$ban = new Ban;
-			$ban->datumIsteka = $_POST['banDate'];
+			$ban->datumIsteka = date('Y-m-d', strtotime($_POST['banDate']));
+			$ban->idKorisnik = intval($_POST['id']);
+			$ban->save();
+		} else if(isset ($_POST['id'])) {
+			$ban = new Ban;
+			$ban->datumIsteka = date('Y-m-d', strtotime('2037-12-31'));
 			$ban->idKorisnik = intval($_POST['id']);
 			$ban->save();
 		}
-		$this->render('index');
+		$this->actionIndex();
 	}
 
 	// Uncomment the following methods and override them if needed
