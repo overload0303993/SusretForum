@@ -1,3 +1,8 @@
+<?php 
+if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+?>
 <h1>Pretraživanje korisnika</h1>
 <p>Unesite dio ili cijelo korisničko ime korisnka kojeg želite tražiti.</p>
 

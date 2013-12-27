@@ -71,7 +71,7 @@ return array(
 		),
 		
 		'errorHandler'=>array(
-			'errorAction'=>'login/error',
+			'errorAction'=>'error/error',
 		),
 		'log'=>array(
 			'class'=>'CLogRouter',

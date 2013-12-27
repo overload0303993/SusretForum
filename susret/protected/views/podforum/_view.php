@@ -13,7 +13,7 @@
 	/* @var $data Podforum */
 	
 	if(Yii::app()->user->isGuest) {
-		$this->render('error');
+		$this->redirect('/susret/error/accessDenied');
 	}
 	?>
 

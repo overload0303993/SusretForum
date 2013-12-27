@@ -1,8 +1,3 @@
-<?php 
-if(Yii::app()->user->isGuest()) {
-			$this->redirect('/susret/error/accessDenied');
-		}
-?>
 <html>
 	<head>
 		<style type="text/css">
@@ -13,22 +8,25 @@ if(Yii::app()->user->isGuest()) {
 			}
 		</style>
 	</head>
-	<h1>Rezultati</h1>
-	<p>Klikom na pojedini link možete vidjeti detalje korisnika.</p>
+	
+	<h1>Baniranje korisnika</h1>
+	<?php $users = Korisnik::model()->findAll();?>
 	<div class="view">
+		<h2>Popis korisnika</h2>
 		<table>
 			<tr>
 				<td>Korisničko ime</td>
 				<td>Starost</td>
-				<td>Spol</td>
 				<td>Broj postova</td>
 				<td>Rang</td>
+				<td>Rola</td>
 			</tr>
 			<?php foreach ($users as $user) { ?>
 				<tr>
-					<td><a href="/susret/korisnik/view/<?php echo $user->id; ?>"><?php echo $user->userName; ?></a></td>
 					<td>
-						<?php
+						<?php echo $user->userName;?></td>
+					<td>
+					<?php
 						$text = "";
 						if ($user->datumRodjenja) {
 							$text = floor((time() - strtotime($user->datumRodjenja) + 7500) / 31556926);
@@ -36,22 +34,24 @@ if(Yii::app()->user->isGuest()) {
 							$text = "--";
 						}
 						echo $text;
-						?>
-					</td>
-					<td>
-						<?php
-						$spol = "";
-						if($user->spol) {
-							$spol = $user->spol;
-						}
-						echo $spol;
-						?>
+					?>
 					</td>
 					<td>
 						<?php echo $user->brojPostova;?>
 					</td>
 					<td>
 						<?php echo $user->brojPostova / 100.0;?>
+					</td>
+					<td>
+						<?php
+						$role = Role::model()->findByPk($user->rola);
+						echo $role->ime;
+						?>
+					</td>
+					<td>
+						<?php echo CHtml::button("Baniraj", array(
+							'submit' => array('/ban/inter'),
+							'params' => array('id' => $user->id)));?>
 					</td>
 				</tr>
 			<?php } ?>

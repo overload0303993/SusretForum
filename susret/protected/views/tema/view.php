@@ -11,7 +11,9 @@
 	<?php
 	/* @var $this TemaController */
 	/* @var $model Tema */
-
+if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
 	$this->breadcrumbs = array(
 		'Temas' => array('index'),
 		$model->id,

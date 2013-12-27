@@ -12,6 +12,10 @@
 /* @var $this PrivatnaporukaController */
 /* @var $dataProvider CActiveDataProvider */
 
+if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+
 $this->breadcrumbs=array(
 	'Privatnaporukas',
 );

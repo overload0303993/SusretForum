@@ -11,8 +11,15 @@
 
 	<?php
 	/* @var $this PodforumController */
+	
+	
 	/* @var $model Podforum */
 
+	
+	if(!Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+	
 	$this->breadcrumbs = array(
 		'Podforums' => array('index'),
 		$model->id,
@@ -25,6 +32,12 @@
 		array('label' => 'Delete Podforum', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm' => 'Are you sure you want to delete this item?')),
 		array('label' => 'Manage Podforum', 'url' => array('admin')),
 	);
+	
+	if(!Yii::app()->user->checkAccess('istrazivac') && $model->id == 11) {
+		//header('Location: /susret/errors/accessDenied');
+		$this->redirect('/susret/error/accessDenied');
+			
+	} else {
 	?>
 
 	<h1><?php echo $model->naziv; ?></h1>
@@ -39,11 +52,6 @@
 	?>
 
 	<?php
-	
-	
-	if(!Yii::app()->user->checkAccess('istrazivac') && $model->id == 11) {
-		header('Location: /susret/errors/accessDenied');
-	}
 	
 	if (empty($teme)) {
 		?>  </br></br> <h2>Na ovom podforumu nema otvorenih tema.</h2> <?php
@@ -102,7 +110,7 @@
 							}
 						}
 						?></td></font></b></tr></table></div> 
-		<?php } ?>
+	<?php } }?>
 		
 
 <?php } ?>

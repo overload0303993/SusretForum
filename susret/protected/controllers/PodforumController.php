@@ -27,9 +27,13 @@ class PodforumController extends Controller
 	public function accessRules()
 	{
 		return array(
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('accessDenied'),
+				'users'=>array('*'),
+			),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 				//'deniedCallback' => $this->redirect('../susret')
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -57,6 +61,11 @@ class PodforumController extends Controller
 		));
 	}
 
+	public function actionAccessDenied()
+	{
+		$this->render('accessDenied');
+	}
+	
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

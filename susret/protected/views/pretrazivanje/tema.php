@@ -1,3 +1,8 @@
+<?php 
+if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+?>
 <h1>Pretraživanje tema</h1>
 <p>Unesite dio ili cijeli naslov teme koju želite tražiti.</p>
 

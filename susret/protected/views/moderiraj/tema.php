@@ -10,7 +10,6 @@
 	</head>
 <?php
 /* @var $this ModerirajController */
-
 ?>
 
 <h1>Moderiranje podforuma</h1>
@@ -40,12 +39,16 @@
 						</td>
 						<td>
 							<?php 
-								echo CHtml::button('Briši postove', array('submit' => array('/moderiraj/post', 'id' => $thread->id)));
+								echo CHtml::button('Briši postove', array(
+									'submit' => array('/moderiraj/post'), 
+									'params' => array('id' => $thread->id)));
 							?>
 						</td>
 						<td>
 							<?php 
-								echo CHtml::button('Izbriši temu', array('submit' => array('/moderiraj/deleteTema', 'idTema' => $thread->id)));
+								echo CHtml::button('Izbriši temu', array(
+									'submit' => array('/moderiraj/deleteTema'), 
+									'params' => array('idTema' => $thread->id)));
 							?>
 						</td>
 					</tr>

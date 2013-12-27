@@ -2,6 +2,11 @@
 /* @var $this PrivatnaporukaController */
 /* @var $model Privatnaporuka */
 
+if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+
+
 $this->breadcrumbs=array(
 	'Privatnaporukas'=>array('index'),
 	$model->id,

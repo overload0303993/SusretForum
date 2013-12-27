@@ -1,3 +1,8 @@
+<?php 
+if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+?>
 <html>
 	<head>
 		<style type="text/css">

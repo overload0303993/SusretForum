@@ -13,6 +13,10 @@
 	/* @var $this KorisnikController */
 	/* @var $model Korisnik */
 
+	if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+		
 	$this->breadcrumbs = array(
 		'Korisniks' => array('index'),
 		$model->id,

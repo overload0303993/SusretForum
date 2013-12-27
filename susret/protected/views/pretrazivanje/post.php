@@ -1,3 +1,8 @@
+<?php
+if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+?>
 <h1>Pretraživanje posta</h1>
 <p>Unesite dio ili cijeli tekst posta kojeg želite tražiti.</p>
 

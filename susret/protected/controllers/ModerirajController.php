@@ -2,20 +2,67 @@
 
 class ModerirajController extends Controller
 {
+	
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
+	
+	public function accessRules() {
+		return array(
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('tema, post'),
+				'roles'=>array('moderator'),
+			),
+		);
+	}
+	
+	
 	public function actionTema()
 	{
+		if(!Yii::app()->user->checkAccess('moderator')) {
+			$this->redirect('/susret/error/accessDenied');
+		}
 		$user = Korisnik::model()->findByPk(Yii::app()->user->Id);
 		$threads = Tema::model()->findAll('idPodforum=:id', array('id'=>$user->idPodforum));
 		$this->render('tema', array('threads' => $threads));
 	}
+	
 	public function actionPost() {
-		$posts = Post::model()->findAll('idTema=:id', array('id'=>$_GET['id']));
-		$this->render('post', array('posts'=>$posts));
+		if(!Yii::app()->user->checkAccess('moderator')) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+		$posts = Post::model()->findAll('idTema=:id', array('id'=>$_POST['id']));
+		$this->render('post', array('posts'=>$posts, 'curThread' => $_POST['id']));	
 	}
 	
 	public function actionDeleteTema() {
-		Tema::model()->findByPk($_GET['idTema'])->delete();
+		if(!Yii::app()->user->checkAccess('moderator')) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+		if(isset($_POST['idTema'])) {
+			$thread = Tema::model()->findByPk($_POST['idTema']);
+			if($thread) {
+				$thread->delete();
+			}
+		}
 		$this->actionTema();
+	}
+	
+	public function actionDeletePost() {
+		if(!Yii::app()->user->checkAccess('moderator')) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+		if(isset($_POST['idPost'])) {
+			$post = Post::model()->findByPk($_POST['idPost']);
+			if($post) {
+				$post->delete();
+			}
+		}
+		$this->actionPost();
 	}
 
 	// Uncomment the following methods and override them if needed

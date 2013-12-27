@@ -11,6 +11,11 @@ $this->menu=array(
 	array('label'=>'List Privatnaporuka', 'url'=>array('index')),
 	array('label'=>'Manage Privatnaporuka', 'url'=>array('admin')),
 );
+
+if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
+		
 ?>
 
 <h1>Napiši poruku</h1>

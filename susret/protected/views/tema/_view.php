@@ -14,6 +14,9 @@
 	/* @var $model Tema */
 	?>
 	<?php
+if(Yii::app()->user->isGuest()) {
+			$this->redirect('/susret/error/accessDenied');
+		}
 	?>
 	<h1><?php 
 		if($cnt == 0) {
