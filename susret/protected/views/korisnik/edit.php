@@ -38,7 +38,7 @@ $criteriaA = new CDbCriteria();
 		<?php echo $form->textField($model,'userName',array('size'=>30,'maxlength'=>30)); ?>
 		<?php 
 			if(!empty($this->greskaUser)) {
-				?> </br> <font color="red"><?php
+				?> <br> <font color="red"><?php
 				echo $this->greskaUser; ?></font><?php
 			}
 		?>
@@ -73,14 +73,15 @@ $criteriaA = new CDbCriteria();
 			'showAnim' => 'fold',
 			'dateFormat' => 'yy-mm-dd', // optional Date formatting
 			'debug' => true,),));?>
-			</br> <font color="red"><?php
+			<br> <font color="red"><?php
 				echo $this->rodGreska; ?></font>
 		</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'potpis'); ?>
 		<?php echo $form->textArea($model,'potpis',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'potpis'); ?>
+		<br> <font color="red"><?php
+				echo $this->potpisGreska; ?></font>
 	</div>
 
 	<div class="row buttons">

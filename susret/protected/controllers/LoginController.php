@@ -4,7 +4,7 @@ class LoginController extends Controller
 {
 
 	public $layout='//layouts/column1';
-	
+	public $error = "";
 	public function actionIndex()
 	{
 		$model=new Login;
@@ -21,9 +21,12 @@ class LoginController extends Controller
 		{
 			$model->attributes=$_POST['Login'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
+			if($model->validate() && $model->login()) {
 				Korisnik::model()->updateByPk(Yii::app()->user->id, array('vrijemePrijave' => new CDbExpression('NOW()')));
 				$this->redirect(Yii::app()->user->returnUrl);
+			} else {
+				$this->error = "Krivo korisničko ime ili lozinka.";
+			}
 		}
 		// display the login form
 		$this->render('index',array('model'=>$model));

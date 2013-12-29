@@ -88,7 +88,7 @@ class PrivatnaporukaController extends Controller
 				$this->render('create',array('model'=>$model));
 			} else
 			if(strlen($model->tekst) > 1500) {
-				$this->greskaPoruka = "Poruka mora ssadržavati manje od 1500 znakova.";
+				$this->greskaPoruka = "Poruka mora sadržavati manje od 1500 znakova.";
 				$this->render('create',array('model'=>$model));
 			} else 
 			$model->idPrimatelj = $user->id;

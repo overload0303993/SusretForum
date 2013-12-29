@@ -12,13 +12,14 @@ class KorisnikController extends Controller {
 	public $greskaRola = "";
 	public $passGreska = "";
 	public $rodGreska = "";
+	public $potpisGreska = "";
 
 	/**
 	 * @return array action filters
 	 */
 	public function filters() {
 		return array(
-			//'accessControl', // perform access control for CRUD operations
+			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -32,11 +33,11 @@ class KorisnikController extends Controller {
 		return array(
 			array('allow', // allow all users to perform 'index' and 'view' actions
 				'actions' => array('index', 'view', 'admin'),
-				'users' => array('@'),
+				'users' => array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions' => array('create', 'update'),
-				'users' => array('@'),
+				'users' => array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions' => array('admin', 'delete'),
@@ -70,28 +71,41 @@ class KorisnikController extends Controller {
 
 		if (isset($_POST['Korisnik'])) {
 			$model->attributes = $_POST['Korisnik'];
-			$user = Korisnik::model()->find('userName=:userName', array(':userName' => $model->userName));
-			if (!empty($user)) {
+			$duljina = Parametri::model()->findByPk(2)->vrijednost;
+			$user = Korisnik::model()->find('userName=:userName', array(':userName' => $model->userName));	
+			if (isset($user)) {
 				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
-				$model->password = $model->drugaLozinka = '';
-				header("Location : " . Yii::app()->request->requestUri);
-			} elseif (empty($model->rola)) {
-				$this->greskaRola = "Rola je obavezna!";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
 			} elseif (empty($model->drugaLozinka) || empty($model->password)) {
 				$this->passGreska = "Obje lozinke su obavezne.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
-			} else if($model->datumRodjenja < date()) {
+			} elseif (empty($model->rola)) {
+				$this->greskaRola = "Rola je obavezna!";
+				$model->password = $model->drugaLozinka = '';
+				header("Location : " . Yii::app()->request->requestUri);
+			} else if(isset($model->datumRodjenja) && strtotime($model->datumRodjenja) > strtotime(date('Y-m-d'))) {
 				$this->rodGreska = "Datum nije ispravan.";
+				$model->password = $model->drugaLozinka = '';
+				header("Location : " . Yii::app()->request->requestUri);
+			} else if(strlen($model->potpis) > $duljina) {
+				$this->potpisGreska = "Potpis mora imati manje od " . $duljina . " znakova.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
 			} else {
 				$model->drugaLozinka = md5(md5($model->drugaLozinka));
 				$model->password = md5(md5($model->password));
+				if($model->password != $model->drugaLozinka) {
+					$this->passGreska = "Lozinke nisu jednake.";
+					$model->password = $model->drugaLozinka = '';
+					header("Location : " . Yii::app()->request->requestUri);
+				}
 				$model->brojPostova = 0;
 				$model->rang = 0;
+				if(empty($model->datumRodjenja)) {
+					$model->datumRodjenja = null;
+				}
 				$model->datumReg = new CDbExpression("NOW()");
 				$uploadedFile = CUploadedFile::getInstance($model, 'avatar');
 				if (empty($uploadedFile)) {
@@ -133,7 +147,7 @@ class KorisnikController extends Controller {
 	 */
 	public function actionUpdate($id) {
 		$model = $this->loadModel($id);
-		$oldUser = $model->userName;
+		$oldUser = $model;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -141,19 +155,26 @@ class KorisnikController extends Controller {
 		if (isset($_POST['Korisnik'])) {
 			$_POST['Korisnik']['avatar'] = $model->avatar;
 			$model->attributes = $_POST['Korisnik'];
+			$model->password = $oldUser->password;
+			$model->setPass($oldUser->password);
 			$user = Korisnik::model()->find('userName=:userName', array(':userName' => $model->userName));
-			if (!empty($user) && $model->userName != $oldUser) {
+			$duljina = Parametri::model()->findByPk(2)->vrijednost;
+			if (!empty($user) && $model->userName != $oldUser->userName) {
 				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
 				header("Location : " . Yii::app()->request->requestUri);
-			} else if($model->datumRodjenja < date()) {
+			} else if(isset($model->datumRodjenja) && strtotime($model->datumRodjenja) > strtotime(date('Y-m-d'))) {
 				$this->rodGreska = "Datum nije ispravan.";
-				$model->password = $model->drugaLozinka = '';
+				header("Location : " . Yii::app()->request->requestUri);
+			} else if(strlen($model->potpis) > $duljina) {
+				$this->potpisGreska = "Potpis mora imati manje od " . $duljina . " znakova.";
 				header("Location : " . Yii::app()->request->requestUri);
 			} else {
 				$model->brojPostova = intval($model->brojPostova);
 				$model->rang = floatval($model->rang);
+				if(empty($model->datumRodjenja)) {
+					$model->datumRodjenja = null;
+				}
 				$uploadedFile = CUploadedFile::getInstance($model, 'avatar');
-				$model->drugaLozinka = "";
 				try {
 					if (!empty($uploadedFile)) {
 						//spremi novu sliku iz "uploadedFile" pod starim imenom da ne radim ponovo svu logiku ponovo
@@ -172,7 +193,8 @@ class KorisnikController extends Controller {
 						$this->redirect(array('/'));
 					}
 				} catch (CDbException $e) {
-					header("Location : /susret/korisnik/create");
+					$this->greskaFatal = "Ozbiljna pogreška. Molimo javite se autorima jer su napravili glupost. Hvala!";
+					header("Location : " . Yii::app()->request->requestUri);
 				}
 			}
 		}

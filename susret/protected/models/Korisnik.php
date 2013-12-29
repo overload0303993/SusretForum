@@ -33,6 +33,10 @@ class Korisnik extends CActiveRecord
 
 	public $drugaLozinka;
 	
+	public function setPass($pass) {
+		$this->drugaLozinka = $pass;
+	}
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -50,16 +54,15 @@ class Korisnik extends CActiveRecord
 		// will receive user inputs.
 		   return array(
 			array('userName, password, datumReg, brojPostova, rang, rola', 'required'),
-			array('drugaLozinka', 'required', 'on'=>'create'),
+			array('drugaLozinka', 'required'),
 			array('brojPostova', 'numerical', 'integerOnly'=>true),
             array('userName', 'length', 'max'=>30),
             array('password', 'length', 'max'=>32),
-			array('drugaLozinka', 'length', 'max'=>32, 'on'=>'create'),
-			array('password', 'compare', 'compareAttribute'=>'drugaLozinka', 'message'=>"Lozinke nisu jednake!", 'on'=>'create'),
+			array('drugaLozinka', 'length', 'max'=>32),
 			array('avatar', 'length', 'max'=>255, 'on'=>'insert,update'),
 			array('avatar', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true),
             array('spol', 'length', 'max'=>1),
-            array('datumRodjenja, potpis, vrijemePrijave, vrijemeOdjave', 'safe'),
+			array('datumRodjenja, potpis, vrijemePrijave, vrijemeOdjave', 'safe'),
 //            // The following rule is used by search().
 //            // @todo Please remove those attributes that should not be searched.
             array('id, userName, password, avatar, spol, datumRodjenja, datumReg, brojPostova, rang, potpis, rola, vrijemePrijave, vrijemeOdjave, idPodforum', 'safe', 'on'=>'search'),
@@ -68,20 +71,20 @@ class Korisnik extends CActiveRecord
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
+	 public function relations()
+    {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
             'bans' => array(self::HAS_MANY, 'Ban', 'idKorisnik'),
-            'idPodforum0' => array(self::BELONGS_TO, 'Podforum', 'idPodforum'),
             'rola0' => array(self::BELONGS_TO, 'Role', 'rola'),
+            'idPodforum0' => array(self::BELONGS_TO, 'Podforum', 'idPodforum'),
             'posts' => array(self::HAS_MANY, 'Post', 'idAutor'),
             'privatnaporukas' => array(self::HAS_MANY, 'Privatnaporuka', 'idPosiljatelj'),
             'privatnaporukas1' => array(self::HAS_MANY, 'Privatnaporuka', 'idPrimatelj'),
             'temas' => array(self::HAS_MANY, 'Tema', 'idAutor'),
         );
-	}
+    }
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -132,7 +135,7 @@ class Korisnik extends CActiveRecord
         $criteria->compare('datumRodjenja',$this->datumRodjenja,true);
         $criteria->compare('datumReg',$this->datumReg,true);
         $criteria->compare('brojPostova',$this->brojPostova);
-        $criteria->compare('rang',$this->rang);
+        $criteria->compare('rang',$this->rang,true);
         $criteria->compare('potpis',$this->potpis,true);
         $criteria->compare('rola',$this->rola);
         $criteria->compare('vrijemePrijave',$this->vrijemePrijave,true);

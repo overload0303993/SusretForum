@@ -3,12 +3,14 @@
 /* @var $model Korisnik */
 /* @var $form CActiveForm */
 
-$criteriaA = new CDbCriteria();
+if(!Yii::app()->user->isGuest) {
+		$criteriaA = new CDbCriteria();
 		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
 		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
 		if(Ban::model()->find($criteriaA)) {
 			$this->redirect('/susret/error/banned');
 		}
+}
 ?>
 
 <?php if (!empty($this->greskaFatal)) {
@@ -37,7 +39,7 @@ $criteriaA = new CDbCriteria();
 			<?php echo $form->textField($model, 'userName', array('size' => 30, 'maxlength' => 30)); ?>
 			<?php
 			if (!empty($this->greskaUser)) {
-				?> </br> <font color="red"><?php echo $this->greskaUser; ?></font><?php
+				?> <br> <font color="red"><?php echo $this->greskaUser; ?></font><?php
 			}
 			?>
 		</div>
@@ -45,14 +47,14 @@ $criteriaA = new CDbCriteria();
 		<div class="row">
 			<?php echo $form->labelEx($model, 'password'); ?>
 			<?php echo $form->passwordField($model, 'password', array('size' => 32, 'maxlength' => 32)); ?>
-			<?php echo $form->error($model, 'password'); ?>
+			
 		</div>
 
 		<div class="row">
 			<?php echo $form->labelEx($model, 'drugaLozinka'); ?>
 			<?php echo $form->passwordField($model, 'drugaLozinka', array('size' => 32, 'maxlength' => 32)); ?>
 			<?php if (!empty($this->passGreska)) {
-				?> </br> <font color="red"><?php echo $this->passGreska; ?></font><?php }
+				?> <br> <font color="red"><?php echo $this->passGreska; ?></font><?php }
 			?>
 		</div>
 
@@ -87,14 +89,15 @@ $criteriaA = new CDbCriteria();
 			'showAnim' => 'fold',
 			'dateFormat' => 'yy-mm-dd', // optional Date formatting
 			'debug' => true,),));?>
-			</br> <font color="red"><?php
+			<br> <font color="red"><?php
 				echo $this->rodGreska; ?></font>
 		</div>
 
 		<div class="row">
 	<?php echo $form->labelEx($model, 'potpis'); ?>
 	<?php echo $form->textArea($model, 'potpis', array('rows' => 6, 'cols' => 50)); ?>
-			<?php echo $form->error($model, 'potpis'); ?>
+			<br> <font color="red"><?php
+				echo $this->potpisGreska; ?></font>
 		</div>
 
 		<div class="row">
@@ -104,7 +107,7 @@ $criteriaA = new CDbCriteria();
 			?>
 			<?php
 			if (!empty($this->greskaRola)) {
-				?> </br> <font color="red"><?php echo $this->greskaRola; ?></font><?php
+				?> <br> <font color="red"><?php echo $this->greskaRola; ?></font><?php
 			}
 			?>
 		</div>

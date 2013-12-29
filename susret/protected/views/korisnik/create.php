@@ -11,12 +11,14 @@ $this->menu=array(
 	array('label'=>'List Korisnik', 'url'=>array('index')),
 	array('label'=>'Manage Korisnik', 'url'=>array('admin')),
 );
-$criteriaA = new CDbCriteria();
+if(!Yii::app()->user->isGuest) {
+		$criteriaA = new CDbCriteria();
 		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
 		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
 		if(Ban::model()->find($criteriaA)) {
 			$this->redirect('/susret/error/banned');
 		}
+}
 ?>
 
 <h1>Create Korisnik</h1>
