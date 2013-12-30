@@ -4,6 +4,8 @@ class InfoController extends Controller
 {
 	public function actionIndex()
 	{
+		//mislim da je ovdi sve jasno...stvari koje mi trebaju, vadim iz baze
+		//sintaksa svega je poprilično jasna
 		$numOfUsers = Korisnik::model()->count();
 		$numOfThreads = Tema::model()->count();
 		$numOfPosts = Post::model()->count();

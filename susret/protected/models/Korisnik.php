@@ -55,7 +55,7 @@ class Korisnik extends CActiveRecord
 		   return array(
 			array('userName, password, datumReg, brojPostova, rang, rola', 'required'),
 			array('drugaLozinka', 'required'),
-			array('brojPostova', 'numerical', 'integerOnly'=>true),
+			array('brojPostova, idPodforum', 'numerical', 'integerOnly'=>true),
             array('userName', 'length', 'max'=>30),
             array('password', 'length', 'max'=>32),
 			array('drugaLozinka', 'length', 'max'=>32),

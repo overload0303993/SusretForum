@@ -7,6 +7,8 @@ class KorisnikController extends Controller {
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout = '//layouts/column1';
+	
+	//razne greške koje se mogu dogoditi
 	public $greskaUser = "";
 	public $greskaFatal = "";
 	public $greskaRola = "";
@@ -73,6 +75,7 @@ class KorisnikController extends Controller {
 			$model->attributes = $_POST['Korisnik'];
 			$duljina = Parametri::model()->findByPk(2)->vrijednost;
 			$user = Korisnik::model()->find('userName=:userName', array(':userName' => $model->userName));	
+			//provjeriti sve parametre i dojaviti grešku u obrazac ako ona postoji
 			if (isset($user)) {
 				$this->greskaUser = "Korisnik s istim korisničkim imenom postoji u bazi.";
 				$model->password = $model->drugaLozinka = '';
@@ -94,6 +97,7 @@ class KorisnikController extends Controller {
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
 			} else {
+				//hashiraj i provjeri jednakost lozinka
 				$model->drugaLozinka = md5(md5($model->drugaLozinka));
 				$model->password = md5(md5($model->password));
 				if($model->password != $model->drugaLozinka) {
@@ -101,17 +105,21 @@ class KorisnikController extends Controller {
 					$model->password = $model->drugaLozinka = '';
 					header("Location : " . Yii::app()->request->requestUri);
 				}
+				//sredi ostale parametre koji se ne unose preko obrasca
 				$model->brojPostova = 0;
 				$model->rang = 0;
 				if(empty($model->datumRodjenja)) {
 					$model->datumRodjenja = null;
 				}
 				$model->datumReg = new CDbExpression("NOW()");
+				//obradi sliku - malo komplicirano
 				$uploadedFile = CUploadedFile::getInstance($model, 'avatar');
+				//ako slika nije uploadana
 				if (empty($uploadedFile)) {
 					$model->avatar = '';
 				} else {
 					//php way za ekstrakciju ekstenzije
+					//dodjeli ime slici i spremi to ime u avatar
 					$path_info = pathinfo($uploadedFile);
 					$ext = $path_info['extension'];
 					$date = new DateTime();
@@ -123,6 +131,7 @@ class KorisnikController extends Controller {
 				try {
 					if ($model->save()) {
 						if (!empty($uploadedFile)) {
+							//spremi sliku ako je uploadana
 							$uploadedFile->saveAs("D:/xampp/htdocs/susret/userImages/" . $filename . '.' . $ext);
 						}
 						$this->redirect(array('/'));
@@ -151,11 +160,14 @@ class KorisnikController extends Controller {
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-
+		//slično ko i create
 		if (isset($_POST['Korisnik'])) {
 			$_POST['Korisnik']['avatar'] = $model->avatar;
 			$model->attributes = $_POST['Korisnik'];
 			$model->password = $oldUser->password;
+			//ovo je jedina razlika, pošto sam morao imati druguLozinku jer
+			//framework zahtjeva provjeru, morao sam ju postaviti iako mi ništa 
+			//ne znači
 			$model->setPass($oldUser->password);
 			$user = Korisnik::model()->find('userName=:userName', array(':userName' => $model->userName));
 			$duljina = Parametri::model()->findByPk(2)->vrijednost;

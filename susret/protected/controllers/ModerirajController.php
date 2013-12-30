@@ -20,9 +20,12 @@ class ModerirajController extends Controller
 		);
 	}
 	
-	
+	/**
+	 * popis svih tema
+	 */
 	public function actionTema()
 	{
+		//provjera za ban i moderatora(slično ko i banContolleru za ban i istraživača)
 		$criteriaA = new CDbCriteria();
 		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
 		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
@@ -32,12 +35,15 @@ class ModerirajController extends Controller
 		if(!Yii::app()->user->checkAccess('moderator')) {
 			$this->redirect('/susret/error/accessDenied');
 		}
+		//dohvati sve teme s podforuma za koje je zadužen trenutni korisnik, moderator
+		//renderiraj tema.php i pošalji mu teme
 		$user = Korisnik::model()->findByPk(Yii::app()->user->Id);
 		$threads = Tema::model()->findAll('idPodforum=:id', array('id'=>$user->idPodforum));
 		$this->render('tema', array('threads' => $threads));
 	}
 	
 	public function actionPost() {
+		//isto ko prije
 		$criteriaA = new CDbCriteria();
 		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
 		$criteriaA->addCondition('idKorisnik = ' . Yii::app()->user->id);
@@ -47,10 +53,12 @@ class ModerirajController extends Controller
 		if(!Yii::app()->user->checkAccess('moderator')) {
 			$this->redirect('/susret/error/accessDenied');
 		}
+		//dohvati sve postove odabrane teme
 		$posts = Post::model()->findAll('idTema=:id', array('id'=>$_POST['id']));
 		$this->render('post', array('posts'=>$posts, 'curThread' => $_POST['id']));	
 	}
 	
+	//briše odabranu temu, id je poslan preko posta iz .php file-a
 	public function actionDeleteTema() {
 		$criteriaA = new CDbCriteria();
 		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');
@@ -70,6 +78,7 @@ class ModerirajController extends Controller
 		$this->actionTema();
 	}
 	
+	//briše postove, id isto poslan preko post-a
 	public function actionDeletePost() {
 		$criteriaA = new CDbCriteria();
 		$criteriaA->addCondition('DATE(datumIsteka) > CURDATE()');

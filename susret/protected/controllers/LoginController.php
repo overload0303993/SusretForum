@@ -16,7 +16,8 @@ class LoginController extends Controller
 			Yii::app()->end();
 		}
 
-		// collect user input data
+		// ovo sve je bilo izgenerirano, radi se provjera korisnika na
+		//neke načine i ako sve prođe dobro, korisnik je prijavljen
 		if(isset($_POST['Login']))
 		{
 			$model->attributes=$_POST['Login'];
@@ -25,6 +26,7 @@ class LoginController extends Controller
 				Korisnik::model()->updateByPk(Yii::app()->user->id, array('vrijemePrijave' => new CDbExpression('NOW()')));
 				$this->redirect(Yii::app()->user->returnUrl);
 			} else {
+				//ovo sam ja nadodao
 				$this->error = "Krivo korisničko ime ili lozinka.";
 			}
 		}

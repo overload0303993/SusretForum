@@ -28,34 +28,19 @@ $criteriaA = new CDbCriteria();
 		if(isset($_POST["Post"])) {
 			$post->attributes = $_POST["Post"];
 		}
-		
 	?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'naziv'); ?>
 		<?php echo $form->textField($model,'naziv',array('size'=>50,'maxlength'=>50)); ?>
-		</br> <font color="red"><?php
+		<br> <font color="red"><?php
 			echo $this->greskaTema; ?></font>
 	</div>
-
-<!--	<div class="row">
-		<?php echo $form->labelEx($model,'idPodforum'); ?>
-		<?php echo $form->textField($model,'idPodforum'); ?>
-		<?php echo $form->error($model,'idPodforum'); ?>
-	</div>-->
-<!--
-	<div class="row">
-		<?php echo $form->labelEx($model,'idAutor'); ?>
-		<?php echo $form->textField($model,'idAutor'); ?>
-		<?php echo $form->error($model,'idAutor'); ?>
-		<?php echo $_GET["pdfId"]; ?>
-		<?php echo Yii::app()->user->id; ?>
-	</div>-->
 
 	<div class="row">
 		<?php echo $form->labelEx($post,'tekst'); ?>
 		<?php echo $form->textArea($post, 'tekst', array('maxlength' => 3000000, 'rows' => 6, 'cols' => 50)); ?>
-		</br> <font color="red">
+		<br> <font color="red">
 			<?php echo $this->greskaPost; ?></font>
 	</div>
 

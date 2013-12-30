@@ -9,10 +9,10 @@ class PretrazivanjeController extends Controller {
 	public function actionKorisnikRez() {
 		if (isset($_POST["query"])) {
 			$user = $_POST["query"];
-			$user = addcslashes($user, '%_'); // escape LIKE's special characters
+			$user = addcslashes($user, '%_'); 
 			$q = new CDbCriteria(array(
-				'condition' => "userName LIKE :match", // no quotes around :match
-				'params' => array(':match' => "%$user%")  // Aha! Wildcards go here
+				'condition' => "userName LIKE :match", 
+				'params' => array(':match' => "%$user%")  
 					));
 			$users = Korisnik::model()->findAll($q);
 			$this->render("korisnikRez", array('users' => $users));
