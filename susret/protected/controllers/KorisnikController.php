@@ -84,11 +84,11 @@ class KorisnikController extends Controller {
 				$this->passGreska = "Obje lozinke su obavezne.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
-			} elseif (empty($model->rola)) {
-				$this->greskaRola = "Rola je obavezna!";
+			} else if(isset($model->datumRodjenja) && strtotime($model->datumRodjenja) > strtotime(date('Y-m-d'))) {
+				$this->rodGreska = "Datum nije ispravan.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
-			} else if(isset($model->datumRodjenja) && strtotime($model->datumRodjenja) > strtotime(date('Y-m-d'))) {
+			} else if(isset($model->datumRodjenja) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $model->datumRodjenja)) {
 				$this->rodGreska = "Datum nije ispravan.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
@@ -108,6 +108,7 @@ class KorisnikController extends Controller {
 				//sredi ostale parametre koji se ne unose preko obrasca
 				$model->brojPostova = 0;
 				$model->rang = 0;
+				$model->rola = 1;
 				if(empty($model->datumRodjenja)) {
 					$model->datumRodjenja = null;
 				}

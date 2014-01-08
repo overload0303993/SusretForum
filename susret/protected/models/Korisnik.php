@@ -53,7 +53,7 @@ class Korisnik extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		   return array(
-			array('userName, password, datumReg, brojPostova, rang, rola', 'required'),
+			array('userName, password, datumReg, brojPostova, rang', 'required'),
 			array('drugaLozinka', 'required'),
 			array('brojPostova, idPodforum', 'numerical', 'integerOnly'=>true),
             array('userName', 'length', 'max'=>30),
@@ -62,7 +62,7 @@ class Korisnik extends CActiveRecord
 			array('avatar', 'length', 'max'=>255, 'on'=>'insert,update'),
 			array('avatar', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true),
             array('spol', 'length', 'max'=>1),
-			array('datumRodjenja, potpis, vrijemePrijave, vrijemeOdjave', 'safe'),
+			array('datumRodjenja, potpis, vrijemePrijave, vrijemeOdjave, rola', 'safe'),
 //            // The following rule is used by search().
 //            // @todo Please remove those attributes that should not be searched.
             array('id, userName, password, avatar, spol, datumRodjenja, datumReg, brojPostova, rang, potpis, rola, vrijemePrijave, vrijemeOdjave, idPodforum', 'safe', 'on'=>'search'),
@@ -93,16 +93,16 @@ class Korisnik extends CActiveRecord
     {
         return array(
             'id' => 'ID',
-            'userName' => 'User Name',
-            'password' => 'Password',
+            'userName' => 'Korisničko ime',
+            'password' => 'Lozinka',
             'avatar' => 'Avatar',
             'spol' => 'Spol',
-            'datumRodjenja' => 'Datum Rodjenja',
-            'datumReg' => 'Datum Reg',
-            'brojPostova' => 'Broj Postova',
+            'datumRodjenja' => 'Datum rođenja',
+            'datumReg' => 'Datum registracije',
+            'brojPostova' => 'Broj postova',
             'rang' => 'Rang',
             'potpis' => 'Potpis',
-            'rola' => 'Rola',
+            'rola' => 'Uloga',
             'vrijemePrijave' => 'Vrijeme Prijave',
             'vrijemeOdjave' => 'Vrijeme Odjave',
             'idPodforum' => 'Id Podforum',

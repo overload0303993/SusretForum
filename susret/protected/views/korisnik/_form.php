@@ -100,18 +100,6 @@ if(!Yii::app()->user->isGuest) {
 				echo $this->potpisGreska; ?></font>
 		</div>
 
-		<div class="row">
-			<?php echo $form->labelEx($model, 'rola'); ?>
-			<?php echo $form->dropDownList($model, 'rola', array(1 => 'Običan korisnik',
-				2 => 'Moderator', 3 => 'Istrazivac'), array('prompt' => 'Odaberi rolu:'))
-			?>
-			<?php
-			if (!empty($this->greskaRola)) {
-				?> <br> <font color="red"><?php echo $this->greskaRola; ?></font><?php
-			}
-			?>
-		</div>
-
 		<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Stvori' : 'Spremi'); ?>
 		</div>

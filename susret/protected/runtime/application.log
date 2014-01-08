@@ -28880,3 +28880,155 @@ Stack trace:
 REQUEST_URI=/susret/assets/534d6d5/images/arrows-ffffff.png
 HTTP_REFERER=http://localhost/susret/param/mod
 ---
+2014/01/07 15:07:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/arrows-ffffff.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2014/01/07 15:07:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/shadow.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/shadow.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2014/01/08 12:27:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/arrows-ffffff.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2014/01/08 12:27:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/shadow.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/shadow.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2014/01/08 12:52:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "e".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('e')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/e
+---
+2014/01/08 13:09:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/shadow.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/shadow.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2014/01/08 13:09:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/arrows-ffffff.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2014/01/08 21:28:55 [error] [php] preg_match(): No ending delimiter '^' found (D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php:91)
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(133): KorisnikController->runAction()
+#2 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): KorisnikController->filterAccessControl()
+#5 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\susret\framework\web\CController.php(265): KorisnikController->runActionWithFilters()
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): KorisnikController->run()
+#9 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\susret\index.php(13): CWebApplication->run()
+REQUEST_URI=/susret/korisnik/create
+2014/01/08 21:29:41 [error] [php] preg_match(): No ending delimiter '^' found (D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php:91)
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(133): KorisnikController->runAction()
+#2 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): KorisnikController->filterAccessControl()
+#5 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\susret\framework\web\CController.php(265): KorisnikController->runActionWithFilters()
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): KorisnikController->run()
+#9 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\susret\index.php(13): CWebApplication->run()
+REQUEST_URI=/susret/korisnik/create
+2014/01/08 21:30:43 [error] [php] preg_match(): No ending delimiter '^' found (D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php:91)
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(133): KorisnikController->runAction()
+#2 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): KorisnikController->filterAccessControl()
+#5 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\susret\framework\web\CController.php(265): KorisnikController->runActionWithFilters()
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): KorisnikController->run()
+#9 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\susret\index.php(13): CWebApplication->run()
+REQUEST_URI=/susret/korisnik/create
+2014/01/08 21:31:23 [error] [php] preg_match(): No ending delimiter '^' found (D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php:91)
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(133): KorisnikController->runAction()
+#2 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): KorisnikController->filterAccessControl()
+#5 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\susret\framework\web\CController.php(265): KorisnikController->runActionWithFilters()
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): KorisnikController->run()
+#9 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\susret\index.php(13): CWebApplication->run()
+REQUEST_URI=/susret/korisnik/create
+2014/01/08 21:32:43 [error] [php] preg_match(): No ending delimiter '^' found (D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php:90)
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(133): KorisnikController->runAction()
+#2 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): KorisnikController->filterAccessControl()
+#5 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\susret\framework\web\CController.php(265): KorisnikController->runActionWithFilters()
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): KorisnikController->run()
+#9 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\susret\index.php(13): CWebApplication->run()
+REQUEST_URI=/susret/korisnik/create
+2014/01/08 21:34:20 [error] [php] preg_match(): No ending delimiter '^' found (D:\xampp\htdocs\susret\protected\controllers\KorisnikController.php:90)
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(133): KorisnikController->runAction()
+#2 D:\xampp\htdocs\susret\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\xampp\htdocs\susret\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 D:\xampp\htdocs\susret\framework\web\filters\CInlineFilter.php(58): KorisnikController->filterAccessControl()
+#5 D:\xampp\htdocs\susret\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 D:\xampp\htdocs\susret\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\susret\framework\web\CController.php(265): KorisnikController->runActionWithFilters()
+#8 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(282): KorisnikController->run()
+#9 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\susret\index.php(13): CWebApplication->run()
+REQUEST_URI=/susret/korisnik/create
