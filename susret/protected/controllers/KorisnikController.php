@@ -178,6 +178,9 @@ class KorisnikController extends Controller {
 			} else if(isset($model->datumRodjenja) && strtotime($model->datumRodjenja) > strtotime(date('Y-m-d'))) {
 				$this->rodGreska = "Datum nije ispravan.";
 				header("Location : " . Yii::app()->request->requestUri);
+			} else if(!empty($model->datumRodjenja) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $model->datumRodjenja)) {
+				$this->rodGreska = "Datum nije ispravan.";
+				header("Location : " . Yii::app()->request->requestUri);
 			} else if(strlen($model->potpis) > $duljina) {
 				$this->potpisGreska = "Potpis mora imati manje od " . $duljina . " znakova.";
 				header("Location : " . Yii::app()->request->requestUri);

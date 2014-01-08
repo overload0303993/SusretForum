@@ -29032,3 +29032,21 @@ Stack trace:
 #10 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #11 D:\xampp\htdocs\susret\index.php(13): CWebApplication->run()
 REQUEST_URI=/susret/korisnik/create
+2014/01/08 21:57:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/shadow.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/shadow.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
+2014/01/08 21:57:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/534d6d5/images/arrows-ffffff.png".' in D:\xampp\htdocs\susret\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\susret\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/534d6d5/...')
+#1 D:\xampp\htdocs\susret\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\susret\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/susret/assets/534d6d5/images/arrows-ffffff.png
+HTTP_REFERER=http://localhost/susret/podforum
+---
