@@ -88,7 +88,7 @@ class KorisnikController extends Controller {
 				$this->rodGreska = "Datum nije ispravan.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
-			} else if(isset($model->datumRodjenja) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $model->datumRodjenja)) {
+			} else if(!empty($model->datumRodjenja) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $model->datumRodjenja)) {
 				$this->rodGreska = "Datum nije ispravan.";
 				$model->password = $model->drugaLozinka = '';
 				header("Location : " . Yii::app()->request->requestUri);
